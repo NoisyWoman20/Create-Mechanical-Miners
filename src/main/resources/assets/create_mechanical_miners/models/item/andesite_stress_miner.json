@@ -1,0 +1,14 @@
+{
+	"parent": "create_mechanical_miners:block/andesite_stress_miner/item",
+	"display": {
+		"gui": {
+			"scale": [0.5, 0.5, 0.5],
+			"rotation": [30, 135, 0],
+			"translation": [0, -3.2, 0]
+		},
+		"fixed": {
+			"translation": [0, -3.25, 0],
+			"scale": [0.5, 0.5, 0.5]
+		}
+	}
+}
