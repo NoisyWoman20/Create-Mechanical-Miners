@@ -29,5 +29,7 @@ public class CreateMechanicalMiners {
 		CMMBlockEntities.register();
 		CMMItems.register();
 		CMMCreativeModeTabs.register(modEventBus);
+
+		modEventBus.addListener(CMMCapabilities::registerCapabilities);
 	}
 }

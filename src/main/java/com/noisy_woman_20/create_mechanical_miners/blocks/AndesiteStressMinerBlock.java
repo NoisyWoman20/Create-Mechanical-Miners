@@ -1,5 +1,6 @@
 package com.noisy_woman_20.create_mechanical_miners.blocks;
 
+import com.noisy_woman_20.create_mechanical_miners.CreateMechanicalMiners;
 import com.noisy_woman_20.create_mechanical_miners.block_entities.CMMBlockEntities;
 import com.noisy_woman_20.create_mechanical_miners.block_entities.AndesiteStressMinerBlockEntity;
 import com.simibubi.create.content.equipment.wrench.IWrenchable;
@@ -8,6 +9,7 @@ import com.simibubi.create.foundation.block.IBE;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -68,6 +70,10 @@ public class AndesiteStressMinerBlock extends KineticBlock implements IBE<Andesi
 
 	@Override
 	public @NotNull BlockState playerWillDestroy(@NotNull Level level, @NotNull BlockPos pos, @NotNull BlockState state, @NotNull Player player) {
+		if (level.getBlockEntity(pos) instanceof AndesiteStressMinerBlockEntity be) {
+			be.dropItem();
+		}
+
 		DoubleBlockHalf half = state.getValue(HALF);
 		BlockPos otherPos = half == DoubleBlockHalf.LOWER ? pos.above() : pos.below();
 		BlockState otherState = level.getBlockState(otherPos);
@@ -97,7 +103,7 @@ public class AndesiteStressMinerBlock extends KineticBlock implements IBE<Andesi
 		BlockEvent.BreakEvent event = new BlockEvent.BreakEvent(level, pos, level.getBlockState(pos), Objects.requireNonNull(player));
 		NeoForge.EVENT_BUS.post(event);
 		if (event.isCanceled()) {
-			return  InteractionResult.SUCCESS;
+			return InteractionResult.SUCCESS;
 		}
 
 		if (!player.isCreative()) {
@@ -109,6 +115,10 @@ public class AndesiteStressMinerBlock extends KineticBlock implements IBE<Andesi
 				player,
 				context.getItemInHand()).forEach(itemStack -> player.getInventory().placeItemBackInInventory(itemStack)
 			);
+		}
+
+		if (level.getBlockEntity(pos) instanceof AndesiteStressMinerBlockEntity be) {
+			be.dropItem();
 		}
 
 		state.spawnAfterBreak(serverLevel, pos, ItemStack.EMPTY, true);
