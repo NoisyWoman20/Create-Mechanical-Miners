@@ -1,5 +1,6 @@
 package com.noisy_woman_20.create_mechanical_miners;
 
+import com.noisy_woman_20.create_mechanical_miners.block_entities.AndesiteStressMinerBlockEntity;
 import com.noisy_woman_20.create_mechanical_miners.block_entities.CMMBlockEntities;
 import com.noisy_woman_20.create_mechanical_miners.blocks.AndesiteStressMinerBlock;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
@@ -15,10 +16,14 @@ public class CMMCapabilities {
 			Capabilities.ItemHandler.BLOCK,
 			CMMBlockEntities.ANDESITE_STRESS_MINER_BLOCK_ENTITY.get(),
 			(be, context) -> {
-				if (be.getBlockState().getValue(AndesiteStressMinerBlock.HALF) == DoubleBlockHalf.UPPER) {
-					return be.itemHandler;
+				if (be.getBlockState().getValue(AndesiteStressMinerBlock.HALF) == DoubleBlockHalf.LOWER) {
+					if (be.getLevel() != null && be.getLevel().getBlockEntity(be.getBlockPos().above()) instanceof AndesiteStressMinerBlockEntity upper) {
+						return upper.itemHandler;
+					} else {
+						return null;
+					}
 				} else {
-					return null;
+					return be.itemHandler;
 				}
 			}
 		);

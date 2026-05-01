@@ -19,7 +19,6 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.neoforged.neoforge.items.IItemHandler;
-import net.neoforged.neoforge.items.ItemHandlerHelper;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -219,7 +218,7 @@ public class AndesiteStressMinerBlockEntity extends KineticBlockEntity { //imple
 		int mineCooldown = (int)(5120f / speed);
 
 		if (++mineTimer >= mineCooldown) {
-			CreateMechanicalMiners.LOGGER.debug("mine!\n    mine cooldown: {}s\n    vein type: {}", mineCooldown / 20, veinDrop.getName(new ItemStack(veinDrop)));
+			itemHandler.insertItem(0, new ItemStack(veinDrop, 1), false);
 			mineTimer = 0;
 		}
 	}
