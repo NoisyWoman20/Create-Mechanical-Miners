@@ -1,4 +1,7 @@
 {
-	"item_group.create_mechanical_miners.create_mechanical_miners_tab": "Create: Mechanical Miners",
-	"block.create_mechanical_miners.andesite_stress_miner" : "Andesite Stress Miner"
+	"block.create_mechanical_miners.andesite_stress_miner" : "Andesite Stress Miner",
+	"block.create_mechanical_miners.diamond_vein": "Diamond Vein",
+	"block.create_mechanical_miners.deepslate_diamond_vein": "Deepslate Diamond Vein",
+
+	"item_group.create_mechanical_miners.create_mechanical_miners_tab": "Create: Mechanical Miners"
 }

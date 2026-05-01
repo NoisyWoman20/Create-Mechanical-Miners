@@ -8,6 +8,14 @@ public class CMMItems {
 		.item("andesite_stress_miner", AndesiteStressMinerItem::new)
 		.register();
 
+	public static final ItemEntry<DeepslateDiamondVeinItem> DEEPSLATE_DIAMOND_VEIN_ITEM = CreateMechanicalMiners.REGISTRATE
+		.item("deepslate_diamond_vein", DeepslateDiamondVeinItem::new)
+		.register();
+
+	public static final ItemEntry<DiamondVeinItem> DIAMOND_VEIN_ITEM = CreateMechanicalMiners.REGISTRATE
+		.item("diamond_vein", DiamondVeinItem::new)
+		.register();
+
 	public static void register() {
 		CreateMechanicalMiners.LOGGER.info("Registering items...");
 	}

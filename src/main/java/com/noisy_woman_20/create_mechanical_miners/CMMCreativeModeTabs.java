@@ -21,6 +21,8 @@ public class CMMCreativeModeTabs {
 			.icon(CMMItems.ANDESITE_STRESS_MINER_ITEM::asStack)
 			.displayItems((itemDisplayParameters, output) -> {
 				output.accept(CMMItems.ANDESITE_STRESS_MINER_ITEM.get());
+				output.accept(CMMItems.DIAMOND_VEIN_ITEM.get());
+				output.accept(CMMItems.DEEPSLATE_DIAMOND_VEIN_ITEM.get());
 			})
 			.build()
 	);
