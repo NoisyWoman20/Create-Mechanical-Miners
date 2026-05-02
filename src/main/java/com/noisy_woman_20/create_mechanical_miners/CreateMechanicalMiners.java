@@ -3,8 +3,13 @@ package com.noisy_woman_20.create_mechanical_miners;
 import com.noisy_woman_20.create_mechanical_miners.block_entities.CMMBlockEntities;
 import com.noisy_woman_20.create_mechanical_miners.blocks.CMMBlocks;
 import com.noisy_woman_20.create_mechanical_miners.items.CMMItems;
+import com.noisy_woman_20.create_mechanical_miners.menus.CMMMenus;
+import com.simibubi.create.content.kinetics.base.KineticBlock;
 import com.simibubi.create.foundation.data.CreateRegistrate;
+import com.simibubi.create.foundation.item.TooltipModifier;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
@@ -21,14 +26,21 @@ public class CreateMechanicalMiners {
 
 	public static final CreateRegistrate REGISTRATE = CreateRegistrate.create(MOD_ID);
 
-    public CreateMechanicalMiners(IEventBus modEventBus, ModContainer modContainer) {
+	public CreateMechanicalMiners(IEventBus modEventBus, ModContainer modContainer) {
 		REGISTRATE.defaultCreativeTab((ResourceKey<CreativeModeTab>)null);
+		REGISTRATE.setTooltipModifierFactory(item -> {
+			if (item instanceof BlockItem blockItem && blockItem.getBlock() instanceof KineticBlock) {
+				return (event) -> event.getToolTip().add(Component.literal("Stress Impact: 256 SU"));
+			}
+			return TooltipModifier.EMPTY;
+		});
 		REGISTRATE.registerEventListeners(modEventBus);
 
 		CMMBlocks.register();
 		CMMBlockEntities.register();
 		CMMItems.register();
 		CMMCreativeModeTabs.register(modEventBus);
+		CMMMenus.register(modEventBus);
 
 		modEventBus.addListener(CMMCapabilities::registerCapabilities);
 	}

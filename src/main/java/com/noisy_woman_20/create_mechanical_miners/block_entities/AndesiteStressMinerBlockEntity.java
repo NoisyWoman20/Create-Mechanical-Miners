@@ -1,8 +1,8 @@
 package com.noisy_woman_20.create_mechanical_miners.block_entities;
 
-import com.noisy_woman_20.create_mechanical_miners.CreateMechanicalMiners;
 import com.noisy_woman_20.create_mechanical_miners.blocks.CMMBlocks;
 import com.noisy_woman_20.create_mechanical_miners.blocks.AndesiteStressMinerBlock;
+import com.noisy_woman_20.create_mechanical_miners.menus.AndesiteStressMinerMenu;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
@@ -11,6 +11,10 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.Containers;
+import net.minecraft.world.MenuProvider;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -19,11 +23,11 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.neoforged.neoforge.items.IItemHandler;
+import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
-
-public class AndesiteStressMinerBlockEntity extends KineticBlockEntity { //implements MenuProvider {
+public class AndesiteStressMinerBlockEntity extends KineticBlockEntity implements MenuProvider {
 	private int speedUpdateTimer = 0;
 	private int mineTimer = 0;
 
@@ -31,7 +35,7 @@ public class AndesiteStressMinerBlockEntity extends KineticBlockEntity { //imple
 
 	public final IItemHandler itemHandler = new ItemHandler();
 
-	private class ItemHandler implements IItemHandler {
+	private class ItemHandler implements IItemHandler, IItemHandlerModifiable {
 		@Override
 		public int getSlots() {
 			return items.size();
@@ -98,6 +102,14 @@ public class AndesiteStressMinerBlockEntity extends KineticBlockEntity { //imple
 		public boolean isItemValid(int slot, @NotNull ItemStack itemStack) {
 			return (slot == 0);
 		}
+
+		@Override
+		public void setStackInSlot(int slot, @NotNull ItemStack stack) {
+			if (slot == 0) {
+				items.set(0, stack);
+				setChanged();
+			}
+		}
 	}
 
 	public AndesiteStressMinerBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
@@ -155,11 +167,6 @@ public class AndesiteStressMinerBlockEntity extends KineticBlockEntity { //imple
 			}
 		}
 		super.setSpeed(speed);
-	}
-
-	@Override
-	public boolean addToGoggleTooltip(List<Component> tooltip, boolean isPlayerSneaking) {
-		return super.addToGoggleTooltip(tooltip, isPlayerSneaking);
 	}
 
 	@Override
@@ -260,5 +267,15 @@ public class AndesiteStressMinerBlockEntity extends KineticBlockEntity { //imple
 		Containers.dropItemStack(level, worldPosition.below().getX(), worldPosition.below().getY(), worldPosition.below().getZ(), items.getFirst());
 		items.set(0, ItemStack.EMPTY);
 		setChanged();
+	}
+
+	@Override
+	public @NotNull Component getDisplayName() {
+		return Component.translatable("block.create_mechanical_miners.andesite_stress_miner");
+	}
+
+	@Override
+	public @Nullable AbstractContainerMenu createMenu(int containerId, @NotNull Inventory playerInventory, @NotNull Player player) {
+		return new AndesiteStressMinerMenu(containerId, playerInventory, this);
 	}
 }

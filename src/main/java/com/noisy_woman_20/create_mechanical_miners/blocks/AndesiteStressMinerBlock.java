@@ -1,6 +1,5 @@
 package com.noisy_woman_20.create_mechanical_miners.blocks;
 
-import com.noisy_woman_20.create_mechanical_miners.CreateMechanicalMiners;
 import com.noisy_woman_20.create_mechanical_miners.block_entities.CMMBlockEntities;
 import com.noisy_woman_20.create_mechanical_miners.block_entities.AndesiteStressMinerBlockEntity;
 import com.simibubi.create.content.equipment.wrench.IWrenchable;
@@ -9,7 +8,6 @@ import com.simibubi.create.foundation.block.IBE;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -27,6 +25,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -197,9 +196,21 @@ public class AndesiteStressMinerBlock extends KineticBlock implements IBE<Andesi
 	public BlockEntity newBlockEntity(BlockPos pos, @NotNull BlockState state) {
 		return new AndesiteStressMinerBlockEntity(CMMBlockEntities.ANDESITE_STRESS_MINER_BLOCK_ENTITY.get(), pos, state);
 	}
-//
-//	@Override
-//	public SpeedLevel getMinimumRequiredSpeedLevel() {
-//		return SpeedLevel.FAST;
-//	}
+
+	@Override
+	protected @NotNull InteractionResult useWithoutItem(
+		@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos,
+		@NotNull Player player, @NotNull BlockHitResult hitResult
+	) {
+		if (!level.isClientSide()) {
+			BlockEntity be = level.getBlockEntity(pos);
+			if (state.getValue(HALF) == DoubleBlockHalf.LOWER) {
+				be = level.getBlockEntity(pos.above());
+			}
+			if (be instanceof AndesiteStressMinerBlockEntity andesiteStressMinerBlockEntity) {
+				player.openMenu(andesiteStressMinerBlockEntity);
+			}
+		}
+		return InteractionResult.SUCCESS;
+	}
 }
