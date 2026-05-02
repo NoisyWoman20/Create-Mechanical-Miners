@@ -1,5 +1,5 @@
 {
-	"parent": "minecraft:block/block",
+	"parent": "create:block/block",
 	"textures": {
 		"0": "create_mechanical_miners:block/andesite_casing_connected",
 		"1": "create_mechanical_miners:block/andesite_casing_gearbox",

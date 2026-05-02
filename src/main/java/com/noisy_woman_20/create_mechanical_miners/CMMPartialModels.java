@@ -12,7 +12,7 @@ public class CMMPartialModels {
 		return PartialModel.of(resource);
 	}
 
-	public static void init() {
-		CreateMechanicalMiners.LOGGER.info("Initializing partial models...");
+	public static void  register() {
+		CreateMechanicalMiners.LOGGER.info("Registering partial models...");
 	}
 }

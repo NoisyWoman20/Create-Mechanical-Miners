@@ -1,5 +1,6 @@
 package com.noisy_woman_20.create_mechanical_miners;
 
+import com.noisy_woman_20.create_mechanical_miners.ponders.CMMPonders;
 import com.noisy_woman_20.create_mechanical_miners.screens.CMMScreens;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -12,7 +13,8 @@ import org.jetbrains.annotations.NotNull;
 public class CreateMechanicalMinersClient {
 	@SubscribeEvent
 	public static void onClientSetup(FMLClientSetupEvent event) {
-		CMMPartialModels.init();
+		CMMPartialModels.register();
+		CMMPonders.register();
 	}
 
 	@SubscribeEvent
