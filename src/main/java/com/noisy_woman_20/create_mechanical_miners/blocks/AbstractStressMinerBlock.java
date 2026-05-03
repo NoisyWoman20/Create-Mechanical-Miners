@@ -1,9 +1,7 @@
 package com.noisy_woman_20.create_mechanical_miners.blocks;
 
-import com.noisy_woman_20.create_mechanical_miners.block_entities.CMMBlockEntities;
 import com.noisy_woman_20.create_mechanical_miners.block_entities.AndesiteStressMinerBlockEntity;
 import com.simibubi.create.content.equipment.wrench.IWrenchable;
-import com.simibubi.create.foundation.block.IBE;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -18,7 +16,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -35,18 +32,13 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
 
-public class AndesiteStressMinerBlock extends AbstractKineticBlock implements IBE<AndesiteStressMinerBlockEntity> {
+public abstract class AbstractStressMinerBlock extends AbstractKineticBlock {
 	public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
 	protected static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 16, 16);
 
-	public AndesiteStressMinerBlock(Properties properties) {
+	public AbstractStressMinerBlock(Properties properties) {
 		super(properties);
 		this.registerDefaultState(this.getStateDefinition().any().setValue(HALF, DoubleBlockHalf.LOWER));
-	}
-
-	@Override
-	public float getStressImpact() {
-		return 256f;
 	}
 
 	@Override
@@ -69,6 +61,55 @@ public class AndesiteStressMinerBlock extends AbstractKineticBlock implements IB
 		if (level.getBlockState(abovePos).isAir()) {
 			level.setBlock(abovePos, this.defaultBlockState().setValue(HALF, DoubleBlockHalf.UPPER), 3);
 		}
+	}
+
+	@Override
+	protected void createBlockStateDefinition(@NotNull  StateDefinition.Builder<Block, BlockState> builder) {
+		super.createBlockStateDefinition(builder);
+		builder.add(HALF);
+	}
+
+	@Override
+	public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
+		return SHAPE;
+	}
+
+	@Override
+	public Direction.Axis getRotationAxis(BlockState state) {
+		return Direction.Axis.Y;
+	}
+
+	@Override
+	public boolean hasShaftTowards(LevelReader world, BlockPos pos, @NotNull BlockState state, Direction face) {
+		return (state.getValue(HALF) == DoubleBlockHalf.UPPER && face == Direction.UP);
+	}
+
+	@Override
+	protected boolean isCollisionShapeFullBlock(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos) {
+		return false;
+	}
+
+	@Override
+	protected boolean isOcclusionShapeFullBlock(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos) {
+		return false;
+	}
+
+	@Override
+	protected @NotNull VoxelShape getOcclusionShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos) {
+		return Shapes.empty();
+	}
+
+	@Override
+	protected boolean skipRendering(@NotNull BlockState state, @NotNull BlockState adjacentState, @NotNull Direction direction) {
+		if (state.getValue(HALF) == DoubleBlockHalf.LOWER && direction == Direction.DOWN) {
+			return false;
+		}
+		return super.skipRendering(state, adjacentState, direction);
+	}
+
+	@Override
+	protected boolean propagatesSkylightDown(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos) {
+		return true;
 	}
 
 	@Override
@@ -111,12 +152,12 @@ public class AndesiteStressMinerBlock extends AbstractKineticBlock implements IB
 
 		if (!player.isCreative()) {
 			Block.getDrops(
-				state,
-				serverLevel,
-				pos,
-				level.getBlockEntity(pos),
-				player,
-				context.getItemInHand()).forEach(itemStack -> player.getInventory().placeItemBackInInventory(itemStack)
+					state,
+					serverLevel,
+					pos,
+					level.getBlockEntity(pos),
+					player,
+					context.getItemInHand()).forEach(itemStack -> player.getInventory().placeItemBackInInventory(itemStack)
 			);
 		}
 
@@ -135,70 +176,6 @@ public class AndesiteStressMinerBlock extends AbstractKineticBlock implements IB
 		}
 
 		return InteractionResult.SUCCESS;
-	}
-
-	@Override
-	protected void createBlockStateDefinition(@NotNull  StateDefinition.Builder<Block, BlockState> builder) {
-		super.createBlockStateDefinition(builder);
-		builder.add(HALF);
-	}
-
-	@Override
-	public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
-		return SHAPE;
-	}
-
-	@Override
-	public Direction.Axis getRotationAxis(BlockState state) {
-		return Direction.Axis.Y;
-	}
-
-	@Override
-	public boolean hasShaftTowards(LevelReader world, BlockPos pos, @NotNull BlockState state, Direction face) {
-		return (state.getValue(HALF) == DoubleBlockHalf.UPPER && face == Direction.UP);
-	}
-
-	@Override
-	public Class<AndesiteStressMinerBlockEntity> getBlockEntityClass() {
-		return AndesiteStressMinerBlockEntity.class;
-	}
-
-	@Override
-	public BlockEntityType<? extends AndesiteStressMinerBlockEntity> getBlockEntityType() {
-		return CMMBlockEntities.ANDESITE_STRESS_MINER_BLOCK_ENTITY.get();
-	}
-
-	@Override
-	protected boolean isCollisionShapeFullBlock(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos) {
-		return false;
-	}
-
-	@Override
-	protected boolean isOcclusionShapeFullBlock(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos) {
-		return false;
-	}
-
-	@Override
-	protected @NotNull VoxelShape getOcclusionShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos) {
-		return Shapes.empty();
-	}
-
-	@Override
-	protected boolean skipRendering(@NotNull BlockState state, @NotNull BlockState adjacentState, @NotNull Direction direction) {
-		if (state.getValue(HALF) == DoubleBlockHalf.LOWER && direction == Direction.DOWN) {
-			return false;
-		}
-		return super.skipRendering(state, adjacentState, direction);
-	}
-
-	@Override
-	protected boolean propagatesSkylightDown(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos) {
-		return true;
-	}
-
-	@Override
-	public BlockEntity newBlockEntity(BlockPos pos, @NotNull BlockState state) {
-		return new AndesiteStressMinerBlockEntity(CMMBlockEntities.ANDESITE_STRESS_MINER_BLOCK_ENTITY.get(), pos, state);
 	}
 
 	@Override

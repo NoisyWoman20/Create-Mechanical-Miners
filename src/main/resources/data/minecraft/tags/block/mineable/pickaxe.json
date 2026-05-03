@@ -3,6 +3,8 @@
 	"values": [
 		"create_mechanical_miners:andesite_stress_miner",
 		"create_mechanical_miners:diamond_vein",
-		"create_mechanical_miners:deepslate_diamond_vein"
+		"create_mechanical_miners:deepslate_diamond_vein",
+		"create_mechanical_miners:iron_vein",
+		"create_mechanical_miners:deepslate_iron_vein"
 	]
 }

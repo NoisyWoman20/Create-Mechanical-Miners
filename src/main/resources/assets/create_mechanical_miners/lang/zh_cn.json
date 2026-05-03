@@ -2,6 +2,8 @@
 	"block.create_mechanical_miners.andesite_stress_miner": "安山应力矿机",
 	"block.create_mechanical_miners.diamond_vein": "钻石矿脉",
 	"block.create_mechanical_miners.deepslate_diamond_vein": "深层钻石矿脉",
+	"block.create_mechanical_miners.iron_vein": "铁矿脉",
+	"block.create_mechanical_miners.deepslate_iron_vein": "深层铁矿脉",
 
 	"item_group.create_mechanical_miners.create_mechanical_miners_tab": "机械动力：机械矿机",
 

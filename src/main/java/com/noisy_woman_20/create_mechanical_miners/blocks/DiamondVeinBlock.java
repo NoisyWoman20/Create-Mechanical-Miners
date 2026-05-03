@@ -1,9 +1,22 @@
 package com.noisy_woman_20.create_mechanical_miners.blocks;
 
-import net.minecraft.world.level.block.Block;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-public class DiamondVeinBlock extends Block {
+public class DiamondVeinBlock extends AbstractVeinBlock {
 	public DiamondVeinBlock(Properties properties) {
 		super(properties);
+	}
+
+	@Override
+	public @NotNull Item getPrimaryOutput() {
+		return Items.DIAMOND;
+	}
+
+	@Override
+	public @Nullable Item getSecondaryOutput() {
+		return null;
 	}
 }

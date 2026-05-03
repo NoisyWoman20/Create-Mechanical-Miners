@@ -5,14 +5,14 @@ import net.minecraft.world.item.Items;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class DeepslateDiamondVeinBlock extends AbstractVeinBlock {
-	public DeepslateDiamondVeinBlock(Properties properties) {
+public class DeepslateIronVeinBlock extends AbstractVeinBlock {
+	public DeepslateIronVeinBlock(Properties properties) {
 		super(properties);
 	}
 
 	@Override
 	public @NotNull Item getPrimaryOutput() {
-		return Items.DIAMOND;
+		return Items.RAW_IRON;
 	}
 
 	@Override

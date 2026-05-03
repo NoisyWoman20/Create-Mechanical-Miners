@@ -4,14 +4,14 @@
 	"step": "underground_ores",
 	"terrain_adaptation": "bury",
 	"type": "minecraft:jigsaw",
-	"start_pool": "create_mechanical_miners:deepslate_diamond_vein",
+	"start_pool": "create_mechanical_miners:vein/deepslate_diamond_vein",
 	"start_height": {
 		"type": "minecraft:uniform",
 		"max_inclusive": {
 			"absolute": 0
 		},
 		"min_inclusive": {
-			"absolute": -64
+			"absolute": -60
 		}
 	},
 	"use_expansion_hack": false,

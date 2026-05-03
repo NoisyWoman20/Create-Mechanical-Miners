@@ -1,9 +1,9 @@
 {
 	"parent": "minecraft:block/block",
 	"textures": {
-		"0": "create_mechanical_miners:block/andesite_casing_very_short_connected",
-		"1": "create_mechanical_miners:block/anvil",
-		"2": "create_mechanical_miners:block/polished_andesite"
+		"0": "create_mechanical_miners:block/miner/stress_miner/andesite_stress_miner/andesite_casing_very_short_connected",
+		"1": "create_mechanical_miners:block/miner/stress_miner/anvil",
+		"2": "create_mechanical_miners:block/miner/stress_miner/polished_andesite"
 	},
 	"elements": [
 		{

@@ -1,6 +1,7 @@
 package com.noisy_woman_20.create_mechanical_miners;
 
 import com.noisy_woman_20.create_mechanical_miners.block_entities.CMMBlockEntities;
+import com.noisy_woman_20.create_mechanical_miners.blocks.AbstractKineticBlock;
 import com.noisy_woman_20.create_mechanical_miners.blocks.CMMBlocks;
 import com.noisy_woman_20.create_mechanical_miners.items.CMMItems;
 import com.noisy_woman_20.create_mechanical_miners.menus.CMMMenus;
@@ -31,16 +32,40 @@ public class CreateMechanicalMiners {
 	public CreateMechanicalMiners(IEventBus modEventBus, ModContainer modContainer) {
 		REGISTRATE.defaultCreativeTab((ResourceKey<CreativeModeTab>)null);
 		REGISTRATE.setTooltipModifierFactory(item -> {
-			if (item instanceof BlockItem blockItem && blockItem.getBlock() == CMMBlocks.ANDESITE_STRESS_MINER_BLOCK.get()) {
+			if (item instanceof BlockItem blockItem && blockItem.getBlock() instanceof AbstractKineticBlock abstractKineticBlock) {
 				return (event) -> {
 					Player player = event.getEntity();
 
 					event.getToolTip().add(Component.empty());
 					event.getToolTip().add(Component.translatable("create_mechanical_miners.tooltip.stress_impact").withStyle(ChatFormatting.GRAY));
-					if (GogglesItem.isWearingGoggles(player)) {
-						event.getToolTip().add(Component.translatable("create_mechanical_miners.tooltip.stress_impact.high.full", 256).withStyle(ChatFormatting.RED));
+					float stressImpact = abstractKineticBlock.getStressImpact();
+					if (stressImpact <= 2) {
+						if (GogglesItem.isWearingGoggles(player)) {
+							event.getToolTip().add(
+								Component.translatable("create_mechanical_miners.tooltip.stress_impact.low.full",
+								Math.round(stressImpact)
+							).withStyle(ChatFormatting.YELLOW));
+						} else {
+							event.getToolTip().add(Component.translatable("create_mechanical_miners.tooltip.stress_impact.low").withStyle(ChatFormatting.YELLOW));
+						}
+					} else if (stressImpact <= 4) {
+						if (GogglesItem.isWearingGoggles(player)) {
+							event.getToolTip().add(
+								Component.translatable("create_mechanical_miners.tooltip.stress_impact.medium.full",
+								Math.round(stressImpact)
+							).withStyle(ChatFormatting.GOLD));
+						} else {
+							event.getToolTip().add(Component.translatable("create_mechanical_miners.tooltip.stress_impact.medium").withStyle(ChatFormatting.GOLD));
+						}
 					} else {
-						event.getToolTip().add(Component.translatable("create_mechanical_miners.tooltip.stress_impact.high").withStyle(ChatFormatting.RED));
+						if (GogglesItem.isWearingGoggles(player)) {
+							event.getToolTip().add(
+								Component.translatable("create_mechanical_miners.tooltip.stress_impact.high.full",
+								Math.round(stressImpact)
+							).withStyle(ChatFormatting.RED));
+						} else {
+							event.getToolTip().add(Component.translatable("create_mechanical_miners.tooltip.stress_impact.high").withStyle(ChatFormatting.RED));
+						}
 					}
 				};
 			}

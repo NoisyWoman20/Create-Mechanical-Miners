@@ -23,6 +23,8 @@ public class CMMCreativeModeTabs {
 				output.accept(CMMItems.ANDESITE_STRESS_MINER_ITEM.get());
 				output.accept(CMMItems.DIAMOND_VEIN_ITEM.get());
 				output.accept(CMMItems.DEEPSLATE_DIAMOND_VEIN_ITEM.get());
+				output.accept(CMMItems.IRON_VEIN_ITEM.get());
+				output.accept(CMMItems.DEEPSLATE_IRON_VEIN_ITEM.get());
 			})
 			.build()
 	);

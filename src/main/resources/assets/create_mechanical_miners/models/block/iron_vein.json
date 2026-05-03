@@ -1,7 +1,7 @@
 {
 	"parent": "minecraft:block/block",
 	"textures": {
-		"0": "create_mechanical_miners:block/vein/diamond_vein",
+		"0": "create_mechanical_miners:block/vein/iron_vein",
 		"1": "create_mechanical_miners:block/vein/stone",
 		"particle": "#1"
 	},

@@ -4,7 +4,7 @@
 	"step": "underground_ores",
 	"terrain_adaptation": "bury",
 	"type": "minecraft:jigsaw",
-	"start_pool": "create_mechanical_miners:diamond_vein",
+	"start_pool": "create_mechanical_miners:vein/diamond_vein",
 	"start_height": {
 		"type": "minecraft:uniform",
 		"max_inclusive": {

@@ -3,16 +3,16 @@
 	"credit": "Made with Blockbench",
 	"parent": "create:block/block",
 	"textures": {
-		"0": "create_mechanical_miners:block/brass_casing_connected",
-		"1": "create_mechanical_miners:block/brass_casing_very_short_connected",
-		"2": "create_mechanical_miners:block/anvil",
-		"3": "create_mechanical_miners:block/axis_top",
-		"4": "create_mechanical_miners:block/mechanical_drill_top",
-		"5": "create_mechanical_miners:block/brass_gearbox_top",
-		"6": "create_mechanical_miners:block/polished_andesite",
-		"7": "create_mechanical_miners:block/brass_casing_connected2",
-		"8": "create_mechanical_miners:block/brass_stress_miner_bracket",
-		"particle": "create_mechanical_miners:block/brass_casing"
+		"0": "create_mechanical_miners:block/miner/stress_miner/brass_stress_miner/brass_casing_connected",
+		"1": "create_mechanical_miners:block/miner/stress_miner/brass_stress_miner/brass_casing_very_short_connected",
+		"2": "create_mechanical_miners:block/miner/anvil",
+		"3": "create_mechanical_miners:block/miner/axis_top",
+		"4": "create_mechanical_miners:block/miner/mechanical_drill_top",
+		"5": "create_mechanical_miners:block/miner/stress_miner/brass_stress_miner/brass_gearbox_top",
+		"6": "create_mechanical_miners:block/miner/polished_andesite",
+		"7": "create_mechanical_miners:block/miner/stress_miner/brass_stress_miner/brass_casing_connected2",
+		"8": "create_mechanical_miners:block/miner/stress_miner/brass_stress_miner/brass_stress_miner_bracket",
+		"particle": "create_mechanical_miners:block/miner/stress_miner/brass_stress_miner/brass_casing"
 	},
 	"elements": [
 		{

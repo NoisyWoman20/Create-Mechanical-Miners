@@ -1,11 +1,11 @@
 {
 	"parent": "minecraft:block/block",
 	"textures": {
-		"0": "create_mechanical_miners:block/andesite_casing_very_short_connected",
-		"1": "create_mechanical_miners:block/axis_top",
-		"2": "create_mechanical_miners:block/mechanical_drill_top",
-		"3": "create_mechanical_miners:block/axis",
-		"particle": "create_mechanical_miners:block/andesite_casing"
+		"0": "create_mechanical_miners:block/miner/stress_miner/andesite_stress_miner/andesite_casing_very_short_connected",
+		"1": "create_mechanical_miners:block/miner/stress_miner/axis_top",
+		"2": "create_mechanical_miners:block/miner/stress_miner/mechanical_drill_top",
+		"3": "create_mechanical_miners:block/miner/stress_miner/axis",
+		"particle": "create_mechanical_miners:block/miner/stress_miner/andesite_stress_miner/andesite_casing"
 	},
 	"elements": [
 		{

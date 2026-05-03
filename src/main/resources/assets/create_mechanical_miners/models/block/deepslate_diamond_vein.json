@@ -1,9 +1,9 @@
 {
 	"parent": "minecraft:block/block",
 	"textures": {
-		"0": "create_mechanical_miners:block/deepslate_diamond_vein",
-		"1": "create_mechanical_miners:block/deepslate",
-		"2": "create_mechanical_miners:block/deepslate_top",
+		"0": "create_mechanical_miners:block/vein/deepslate_diamond_vein",
+		"1": "create_mechanical_miners:block/vein/deepslate",
+		"2": "create_mechanical_miners:block/vein/deepslate_top",
 		"particle": "#1"
 	},
 	"elements": [
