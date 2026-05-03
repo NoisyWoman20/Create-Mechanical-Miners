@@ -21,6 +21,7 @@ public class CMMBlocks {
 		.properties(p -> p.explosionResistance(6f))
 		.properties(p -> p.mapColor(MapColor.DEEPSLATE))
 		.properties(p -> p.sound(SoundType.DEEPSLATE))
+		.properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
 		.register();
 
 	public static final BlockEntry<DiamondVeinBlock> DIAMOND_VEIN_BLOCK = CreateMechanicalMiners.REGISTRATE
@@ -29,6 +30,7 @@ public class CMMBlocks {
 		.properties(p -> p.explosionResistance(6f))
 		.properties(p -> p.mapColor(MapColor.STONE))
 		.properties(p -> p.sound(SoundType.STONE))
+		.properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
 		.register();
 
 	public static void register() {
