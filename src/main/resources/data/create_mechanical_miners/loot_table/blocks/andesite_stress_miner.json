@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:block",
+	"pools": [
+		{
+			"bonus_rolls": 0.0,
+			"conditions": [
+				{
+					"condition": "minecraft:survives_explosion"
+				}
+			],
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "create_mechanical_miners:andesite_stress_miner"
+				}
+			],
+			"rolls": 1.0
+		}
+	],
+	"random_sequence": "create_mechanical_miners:blocks/andesite_stress_miner"
+}

@@ -1,0 +1,14 @@
+{
+	"fallback": "minecraft:empty",
+	"elements": [
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"projection": "rigid",
+				"location": "create_mechanical_miners:deepslate_diamond_vein",
+				"processors": "minecraft:empty"
+			}
+		}
+	]
+}

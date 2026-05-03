@@ -1,0 +1,20 @@
+{
+	"block.create_mechanical_miners.andesite_stress_miner": "Andesite Stress Miner",
+	"block.create_mechanical_miners.diamond_vein": "Diamond Vein",
+	"block.create_mechanical_miners.deepslate_diamond_vein": "Deepslate Diamond Vein",
+
+	"item_group.create_mechanical_miners.create_mechanical_miners_tab": "Create: Mechanical Miners",
+
+	"create_mechanical_miners.ponder.andesite_stress_miner.header": "Mine it with an Andesite Stress Miner",
+	"create_mechanical_miners.ponder.andesite_stress_miner.text_1": "This is a Diamond Vein",
+	"create_mechanical_miners.ponder.andesite_stress_miner.text_2": "It can be mined with an Andesite Stress Miner",
+	"create_mechanical_miners.ponder.andesite_stress_miner.text_3": "Mined ores are stored in the Andesite Stress Miner's internal inventory",
+
+	"create_mechanical_miners.tooltip.stress_impact": "Kinetic Stress Impact:",
+	"create_mechanical_miners.tooltip.stress_impact.low": " █▒▒ Low",
+	"create_mechanical_miners.tooltip.stress_impact.medium": " ██▓ Moderate",
+	"create_mechanical_miners.tooltip.stress_impact.high": " ███ High",
+	"create_mechanical_miners.tooltip.stress_impact.low.full": " █▒▒ %dx RPM",
+	"create_mechanical_miners.tooltip.stress_impact.medium.full": " ██▓ %dx RPM",
+	"create_mechanical_miners.tooltip.stress_impact.high.full": " ███ %dx RPM"
+}

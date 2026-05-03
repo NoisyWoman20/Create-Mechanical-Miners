@@ -1,0 +1,10 @@
+{
+	"variants": {
+		"half=lower": {
+			"model": "create_mechanical_miners:block/andesite_stress_miner/block_lower"
+		},
+		"half=upper": {
+			"model": "create_mechanical_miners:block/andesite_stress_miner/block_upper"
+		}
+	}
+}

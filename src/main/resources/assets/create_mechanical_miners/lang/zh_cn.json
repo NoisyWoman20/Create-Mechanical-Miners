@@ -1,0 +1,21 @@
+{
+	"block.create_mechanical_miners.andesite_stress_miner": "安山应力矿机",
+	"block.create_mechanical_miners.diamond_vein": "钻石矿脉",
+	"block.create_mechanical_miners.deepslate_diamond_vein": "深层钻石矿脉",
+
+	"item_group.create_mechanical_miners.create_mechanical_miners_tab": "机械动力：机械矿机",
+
+	"create_mechanical_miners.ponder.andesite_stress_miner.header": "使用安山应力矿机来开采矿物",
+	"create_mechanical_miners.ponder.andesite_stress_miner.text_1": "这是钻石矿脉",
+	"create_mechanical_miners.ponder.andesite_stress_miner.text_2": "可以使用安山应力矿机来开采",
+	"create_mechanical_miners.ponder.andesite_stress_miner.text_3": "开采出的矿石会存储在安山应力矿机内部",
+
+	"create_mechanical_miners.tooltip.stress_impact": "应力影响：",
+	"create_mechanical_miners.tooltip.stress_impact.low": " █▒▒ 低",
+	"create_mechanical_miners.tooltip.stress_impact.medium": " ██▓ 中",
+	"create_mechanical_miners.tooltip.stress_impact.high": " ███ 高",
+	"create_mechanical_miners.tooltip.stress_impact.low.full": " █▒▒ %dx RPM",
+	"create_mechanical_miners.tooltip.stress_impact.medium.full": " ██▓ %dx RPM",
+	"create_mechanical_miners.tooltip.stress_impact.high.full": " ███ %dx RPM"
+
+}
