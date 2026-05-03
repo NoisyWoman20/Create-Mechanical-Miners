@@ -12,10 +12,10 @@
 
 	"create_mechanical_miners.tooltip.stress_impact": "应力影响：",
 	"create_mechanical_miners.tooltip.stress_impact.low": " █▒▒ 低",
-	"create_mechanical_miners.tooltip.stress_impact.medium": " ██▓ 中",
+	"create_mechanical_miners.tooltip.stress_impact.medium": " ██▒ 中",
 	"create_mechanical_miners.tooltip.stress_impact.high": " ███ 高",
 	"create_mechanical_miners.tooltip.stress_impact.low.full": " █▒▒ %dx RPM",
-	"create_mechanical_miners.tooltip.stress_impact.medium.full": " ██▓ %dx RPM",
+	"create_mechanical_miners.tooltip.stress_impact.medium.full": " ██▒ %dx RPM",
 	"create_mechanical_miners.tooltip.stress_impact.high.full": " ███ %dx RPM"
 
 }

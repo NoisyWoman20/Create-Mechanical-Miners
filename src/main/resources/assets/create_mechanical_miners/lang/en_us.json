@@ -12,9 +12,9 @@
 
 	"create_mechanical_miners.tooltip.stress_impact": "Kinetic Stress Impact:",
 	"create_mechanical_miners.tooltip.stress_impact.low": " █▒▒ Low",
-	"create_mechanical_miners.tooltip.stress_impact.medium": " ██▓ Moderate",
+	"create_mechanical_miners.tooltip.stress_impact.medium": " ██▒ Moderate",
 	"create_mechanical_miners.tooltip.stress_impact.high": " ███ High",
 	"create_mechanical_miners.tooltip.stress_impact.low.full": " █▒▒ %dx RPM",
-	"create_mechanical_miners.tooltip.stress_impact.medium.full": " ██▓ %dx RPM",
+	"create_mechanical_miners.tooltip.stress_impact.medium.full": " ██▒ %dx RPM",
 	"create_mechanical_miners.tooltip.stress_impact.high.full": " ███ %dx RPM"
 }
