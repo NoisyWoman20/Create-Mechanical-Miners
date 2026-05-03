@@ -77,8 +77,4 @@ public class AndesiteStressMinerMenu extends AbstractContainerMenu {
 		BlockPos pos = blockEntity.getBlockPos();
 		return (player.distanceToSqr((pos.getX() + 0.5), (pos.getY() + 0.5), (pos.getZ() + 0.5)) <= 64.0);
 	}
-
-	public AndesiteStressMinerBlockEntity getBlockEntity() {
-		return blockEntity;
-	}
 }
