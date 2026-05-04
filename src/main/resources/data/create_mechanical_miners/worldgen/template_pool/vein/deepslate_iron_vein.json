@@ -7,7 +7,7 @@
 				"element_type": "minecraft:single_pool_element",
 				"projection": "rigid",
 				"location": "create_mechanical_miners:vein/deepslate_iron_vein",
-				"processors": "create_mechanical_miners:replace_stone_and_deepslate_with_iron_ore"
+				"processors": "create_mechanical_miners:replace_stone_and_deepslate_with_iron_ore_and_deepslate_iron_ore"
 			}
 		}
 	]

@@ -1,0 +1,14 @@
+{
+	"fallback": "minecraft:empty",
+	"elements": [
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"projection": "rigid",
+				"location": "create_mechanical_miners:vein/deepslate_copper_vein",
+				"processors": "create_mechanical_miners:replace_stone_and_deepslate_with_copper_ore_and_deepslate_copper_ore"
+			}
+		}
+	]
+}

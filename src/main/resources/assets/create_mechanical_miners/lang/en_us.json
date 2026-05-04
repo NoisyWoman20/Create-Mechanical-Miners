@@ -10,6 +10,9 @@
 	"block.create_mechanical_miners.gold_vein": "Gold Vein",
 	"block.create_mechanical_miners.deepslate_gold_vein": "Deepslate Gold Vein",
 
+	"block.create_mechanical_miners.copper_vein": "Copper Vein",
+	"block.create_mechanical_miners.deepslate_copper_vein": "Deepslate Copper Vein",
+
 	"item_group.create_mechanical_miners.create_mechanical_miners_tab": "Create: Mechanical Miners",
 
 	"create_mechanical_miners.ponder.andesite_stress_miner.header": "Mine it with an Andesite Stress Miner",

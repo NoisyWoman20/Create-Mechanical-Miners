@@ -23,6 +23,14 @@
 		{
 			"structure": "create_mechanical_miners:vein/deepslate_gold_vein",
 			"weight": 2
+		},
+		{
+			"structure": "create_mechanical_miners:vein/copper_vein",
+			"weight": 1
+		},
+		{
+			"structure": "create_mechanical_miners:vein/deepslate_copper_vein",
+			"weight": 2
 		}
 	],
 	"placement": {

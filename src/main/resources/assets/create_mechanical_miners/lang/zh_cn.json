@@ -10,6 +10,9 @@
 	"block.create_mechanical_miners.gold_vein": "金矿脉",
 	"block.create_mechanical_miners.deepslate_gold_vein": "深层金矿脉",
 
+	"block.create_mechanical_miners.copper_vein": "铜矿脉",
+	"block.create_mechanical_miners.deepslate_copper_vein": "深层铜矿脉",
+
 	"item_group.create_mechanical_miners.create_mechanical_miners_tab": "机械动力：机械矿机",
 
 	"create_mechanical_miners.ponder.andesite_stress_miner.header": "使用安山应力矿机来开采矿物",

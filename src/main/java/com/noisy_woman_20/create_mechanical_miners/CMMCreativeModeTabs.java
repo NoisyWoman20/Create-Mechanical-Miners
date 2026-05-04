@@ -25,6 +25,9 @@ public class CMMCreativeModeTabs {
 				output.accept(CMMItems.IRON_VEIN_ITEM.get());
 				output.accept(CMMItems.DEEPSLATE_IRON_VEIN_ITEM.get());
 
+				output.accept(CMMItems.COPPER_VEIN_ITEM.get());
+				output.accept(CMMItems.DEEPSLATE_COPPER_VEIN_ITEM.get());
+
 				output.accept(CMMItems.GOLD_VEIN_ITEM.get());
 				output.accept(CMMItems.DEEPSLATE_GOLD_VEIN_ITEM.get());
 
