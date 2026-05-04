@@ -1,9 +1,14 @@
 {
 	"block.create_mechanical_miners.andesite_stress_miner": "Andesite Stress Miner",
+
 	"block.create_mechanical_miners.diamond_vein": "Diamond Vein",
 	"block.create_mechanical_miners.deepslate_diamond_vein": "Deepslate Diamond Vein",
+
 	"block.create_mechanical_miners.iron_vein": "Iron Vein",
 	"block.create_mechanical_miners.deepslate_iron_vein": "Deepslate Iron Vein",
+
+	"block.create_mechanical_miners.gold_vein": "Gold Vein",
+	"block.create_mechanical_miners.deepslate_gold_vein": "Deepslate Gold Vein",
 
 	"item_group.create_mechanical_miners.create_mechanical_miners_tab": "Create: Mechanical Miners",
 

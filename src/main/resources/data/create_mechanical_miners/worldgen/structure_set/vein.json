@@ -1,0 +1,35 @@
+{
+	"structures": [
+		{
+			"structure": "create_mechanical_miners:vein/diamond_vein",
+			"weight": 1
+		},
+		{
+			"structure": "create_mechanical_miners:vein/deepslate_diamond_vein",
+			"weight": 2
+		},
+		{
+			"structure": "create_mechanical_miners:vein/iron_vein",
+			"weight": 1
+		},
+		{
+			"structure": "create_mechanical_miners:vein/deepslate_iron_vein",
+			"weight": 2
+		},
+		{
+			"structure": "create_mechanical_miners:vein/gold_vein",
+			"weight": 1
+		},
+		{
+			"structure": "create_mechanical_miners:vein/deepslate_gold_vein",
+			"weight": 2
+		}
+	],
+	"placement": {
+		"salt": 114514,
+		"type": "minecraft:random_spread",
+		"spread_type": "linear",
+		"spacing": 20,
+		"separation": 3
+	}
+}

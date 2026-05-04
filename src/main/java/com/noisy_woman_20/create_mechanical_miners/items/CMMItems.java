@@ -24,6 +24,14 @@ public class CMMItems {
 		.item("deepslate_iron_vein", DeepslateIronVeinItem::new)
 		.register();
 
+	public static final ItemEntry<GoldVeinItem> GOLD_VEIN_ITEM = CreateMechanicalMiners.REGISTRATE
+		.item("gold_vein", GoldVeinItem::new)
+		.register();
+
+	public static final ItemEntry<DeepslateGoldVeinItem> DEEPSLATE_GOLD_VEIN_ITEM = CreateMechanicalMiners.REGISTRATE
+		.item("deepslate_gold_vein", DeepslateGoldVeinItem::new)
+		.register();
+
 	public static void register() {
 		CreateMechanicalMiners.LOGGER.info("Registering items...");
 	}

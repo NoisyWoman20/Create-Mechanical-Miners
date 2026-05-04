@@ -6,8 +6,8 @@
 			"element": {
 				"element_type": "minecraft:single_pool_element",
 				"projection": "rigid",
-				"location": "create_mechanical_miners:vein/deepslate_diamond_vein",
-				"processors": "create_mechanical_miners:replace_stone_and_deepslate_with_diamond_ore"
+				"location": "create_mechanical_miners:vein/gold_vein",
+				"processors": "create_mechanical_miners:replace_stone_and_deepslate_with_gold_ore"
 			}
 		}
 	]

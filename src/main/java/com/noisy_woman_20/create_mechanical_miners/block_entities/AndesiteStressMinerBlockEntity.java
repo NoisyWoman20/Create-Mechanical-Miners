@@ -1,6 +1,6 @@
 package com.noisy_woman_20.create_mechanical_miners.block_entities;
 
-import com.noisy_woman_20.create_mechanical_miners.CreateMechanicalMiners;
+import com.noisy_woman_20.create_mechanical_miners.blocks.AbstractVeinBlock;
 import com.noisy_woman_20.create_mechanical_miners.blocks.CMMBlocks;
 import com.noisy_woman_20.create_mechanical_miners.blocks.AndesiteStressMinerBlock;
 import com.noisy_woman_20.create_mechanical_miners.menus.AndesiteStressMinerMenu;
@@ -18,7 +18,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -215,13 +215,13 @@ public class AndesiteStressMinerBlockEntity extends KineticBlockEntity implement
 			return;
 		}
 
-		Item veinDrop;
-		BlockState below = level.getBlockState(getBlockPos().below(2));
-		if (below.is(CMMBlocks.DIAMOND_VEIN_BLOCK) || below.is(CMMBlocks.DEEPSLATE_DIAMOND_VEIN_BLOCK)) {
-			veinDrop = Items.DIAMOND;
-		} else {
+		Block below = level.getBlockState(getBlockPos().below(2)).getBlock();
+
+		if (!(below instanceof AbstractVeinBlock)) {
 			return;
 		}
+
+		Item veinDrop = ((AbstractVeinBlock)below).getPrimaryOutput();
 
 		int mineCooldown = (int)(5120f / speed);
 
