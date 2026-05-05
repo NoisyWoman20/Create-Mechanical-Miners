@@ -1,5 +1,6 @@
 package com.noisy_woman_20.create_mechanical_miners.block_entities;
 
+import com.noisy_woman_20.create_mechanical_miners.CreateMechanicalMiners;
 import com.noisy_woman_20.create_mechanical_miners.blocks.CMMBlocks;
 import com.noisy_woman_20.create_mechanical_miners.blocks.AndesiteStressMinerBlock;
 import com.noisy_woman_20.create_mechanical_miners.menus.AndesiteStressMinerMenu;
@@ -182,7 +183,7 @@ public class AndesiteStressMinerBlockEntity extends KineticBlockEntity implement
 			return;
 		}
 
-		if (level == null || level.isClientSide()) {
+		if (level == null) {
 			return;
 		}
 
