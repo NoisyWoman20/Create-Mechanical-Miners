@@ -1,0 +1,15 @@
+{
+	"structures": [
+		{
+			"structure": "create_mechanical_miners:deepslate_diamond_vein",
+			"weight": 1
+		}
+	],
+	"placement": {
+		"salt": 114515,
+		"type": "minecraft:random_spread",
+		"spread_type": "linear",
+		"spacing": 20,
+		"separation": 0
+	}
+}
