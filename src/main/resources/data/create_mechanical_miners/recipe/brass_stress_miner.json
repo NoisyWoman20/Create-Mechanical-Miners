@@ -3,19 +3,19 @@
 	"category": "misc",
 	"key": {
 		"a": {
-			"item": "create:andesite_casing"
+			"item": "create:brass_casing"
 		},
 		"b": {
 			"item": "create:mechanical_drill"
 		},
 		"c": {
-			"item": "create:andesite_alloy"
+			"item": "create:brass_ingot"
 		},
 		"d": {
 			"item": "create:shaft"
 		},
 		"f": {
-			"item": "create:andesite_bars"
+			"item": "create:brass_bars"
 		}
 	},
 	"pattern": [
@@ -24,7 +24,7 @@
 		"fbf"
 	],
 	"result": {
-		"id": "create_mechanical_miners:andesite_stress_miner"
+		"id": "create_mechanical_miners:brass_stress_miner"
 	},
 	"show_notification": true
 }

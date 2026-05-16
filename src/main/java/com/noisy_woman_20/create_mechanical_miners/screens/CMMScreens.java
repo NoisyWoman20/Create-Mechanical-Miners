@@ -9,5 +9,6 @@ public class CMMScreens {
 	public static void register(@NotNull RegisterMenuScreensEvent event) {
 		CreateMechanicalMiners.LOGGER.info("Registering screens...");
 		event.register(CMMMenus.ANDESITE_STRESS_MINER_MENU.get(), AndesiteStressMinerScreen::new);
+		event.register(CMMMenus.BRASS_STRESS_MINER_MENU.get(), BrassStressMinerScreen::new);
 	}
 }

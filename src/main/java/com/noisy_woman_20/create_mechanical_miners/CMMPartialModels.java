@@ -6,6 +6,8 @@ import net.minecraft.resources.ResourceLocation;
 public class CMMPartialModels {
 	public static final PartialModel ANDESITE_STRESS_MINER_HEAD_LOWER = block("andesite_stress_miner/head_lower");
 	public static final PartialModel ANDESITE_STRESS_MINER_HEAD_UPPER = block("andesite_stress_miner/head_upper");
+	public static final PartialModel BRASS_STRESS_MINER_HEAD_LOWER = block("brass_stress_miner/head_lower");
+	public static final PartialModel BRASS_STRESS_MINER_HEAD_UPPER = block("brass_stress_miner/head_upper");
 
 	private static PartialModel block(String path) {
 		ResourceLocation resource = ResourceLocation.fromNamespaceAndPath(CreateMechanicalMiners.MOD_ID, ("block/" + path));

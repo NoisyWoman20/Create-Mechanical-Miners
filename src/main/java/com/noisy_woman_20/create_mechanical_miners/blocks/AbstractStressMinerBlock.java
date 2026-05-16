@@ -1,6 +1,6 @@
 package com.noisy_woman_20.create_mechanical_miners.blocks;
 
-import com.noisy_woman_20.create_mechanical_miners.block_entities.AndesiteStressMinerBlockEntity;
+import com.noisy_woman_20.create_mechanical_miners.block_entities.AbstractStressMinerBlockEntity;
 import com.simibubi.create.content.equipment.wrench.IWrenchable;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -114,7 +114,7 @@ public abstract class AbstractStressMinerBlock extends AbstractKineticBlock {
 
 	@Override
 	public @NotNull BlockState playerWillDestroy(@NotNull Level level, @NotNull BlockPos pos, @NotNull BlockState state, @NotNull Player player) {
-		if (level.getBlockEntity(pos) instanceof AndesiteStressMinerBlockEntity be) {
+		if (level.getBlockEntity(pos) instanceof AbstractStressMinerBlockEntity be) {
 			be.dropItem();
 		}
 
@@ -152,16 +152,16 @@ public abstract class AbstractStressMinerBlock extends AbstractKineticBlock {
 
 		if (!player.isCreative()) {
 			Block.getDrops(
-					state,
-					serverLevel,
-					pos,
-					level.getBlockEntity(pos),
-					player,
-					context.getItemInHand()).forEach(itemStack -> player.getInventory().placeItemBackInInventory(itemStack)
+				state,
+				serverLevel,
+				pos,
+				level.getBlockEntity(pos),
+				player,
+				context.getItemInHand()).forEach(itemStack -> player.getInventory().placeItemBackInInventory(itemStack)
 			);
 		}
 
-		if (level.getBlockEntity(pos) instanceof AndesiteStressMinerBlockEntity be) {
+		if (level.getBlockEntity(pos) instanceof AbstractStressMinerBlockEntity be) {
 			be.dropItem();
 		}
 
@@ -188,8 +188,8 @@ public abstract class AbstractStressMinerBlock extends AbstractKineticBlock {
 			if (state.getValue(HALF) == DoubleBlockHalf.LOWER) {
 				be = level.getBlockEntity(pos.above());
 			}
-			if (be instanceof AndesiteStressMinerBlockEntity andesiteStressMinerBlockEntity) {
-				player.openMenu(andesiteStressMinerBlockEntity);
+			if (be instanceof AbstractStressMinerBlockEntity miner && miner.getBlockClass().equals(getClass())) {
+				player.openMenu(miner);
 			}
 		}
 		return InteractionResult.SUCCESS;

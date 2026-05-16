@@ -73,8 +73,6 @@ public class CreateMechanicalMiners {
 		});
 		REGISTRATE.registerEventListeners(modEventBus);
 
-		LOGGER.info("aaaa");
-
 		CMMBlocks.register();
 		CMMBlockEntities.register();
 		CMMItems.register();

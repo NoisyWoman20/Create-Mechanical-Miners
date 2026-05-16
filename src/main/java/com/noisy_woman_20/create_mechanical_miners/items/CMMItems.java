@@ -8,6 +8,10 @@ public class CMMItems {
 		.item("andesite_stress_miner", AndesiteStressMinerItem::new)
 		.register();
 
+	public static final ItemEntry<BrassStressMinerItem> BRASS_STRESS_MINER_ITEM = CreateMechanicalMiners.REGISTRATE
+		.item("brass_stress_miner", BrassStressMinerItem::new)
+		.register();
+
 	public static final ItemEntry<DiamondVeinItem> DIAMOND_VEIN_ITEM = CreateMechanicalMiners.REGISTRATE
 		.item("diamond_vein", DiamondVeinItem::new)
 		.register();

@@ -1,8 +1,10 @@
 package com.noisy_woman_20.create_mechanical_miners;
 
 import com.noisy_woman_20.create_mechanical_miners.block_entities.AndesiteStressMinerBlockEntity;
+import com.noisy_woman_20.create_mechanical_miners.block_entities.BrassStressMinerBlockEntity;
 import com.noisy_woman_20.create_mechanical_miners.block_entities.CMMBlockEntities;
 import com.noisy_woman_20.create_mechanical_miners.blocks.AndesiteStressMinerBlock;
+import com.noisy_woman_20.create_mechanical_miners.blocks.BrassStressMinerBlock;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
@@ -18,6 +20,22 @@ public class CMMCapabilities {
 			(be, context) -> {
 				if (be.getBlockState().getValue(AndesiteStressMinerBlock.HALF) == DoubleBlockHalf.LOWER) {
 					if (be.getLevel() != null && be.getLevel().getBlockEntity(be.getBlockPos().above()) instanceof AndesiteStressMinerBlockEntity upper) {
+						return upper.itemHandler;
+					} else {
+						return null;
+					}
+				} else {
+					return be.itemHandler;
+				}
+			}
+		);
+
+		event.registerBlockEntity(
+			Capabilities.ItemHandler.BLOCK,
+			CMMBlockEntities.BRASS_STRESS_MINER_BLOCK_ENTITY.get(),
+			(be, context) -> {
+				if (be.getBlockState().getValue(BrassStressMinerBlock.HALF) == DoubleBlockHalf.LOWER) {
+					if (be.getLevel() != null && be.getLevel().getBlockEntity(be.getBlockPos().above()) instanceof BrassStressMinerBlockEntity upper) {
 						return upper.itemHandler;
 					} else {
 						return null;

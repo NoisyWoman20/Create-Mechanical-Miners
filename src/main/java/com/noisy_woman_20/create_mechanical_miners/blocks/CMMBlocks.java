@@ -15,6 +15,14 @@ public class CMMBlocks {
 		.properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
 		.register();
 
+	public static final BlockEntry<BrassStressMinerBlock> BRASS_STRESS_MINER_BLOCK = CreateMechanicalMiners.REGISTRATE
+		.block("brass_stress_miner", BrassStressMinerBlock::new)
+		.properties(p -> p.strength(1.5f))
+		.properties(p -> p.explosionResistance(6f))
+		.properties(p -> p.mapColor(MapColor.PODZOL))
+		.properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
+		.register();
+
 	public static final BlockEntry<DiamondVeinBlock> DIAMOND_VEIN_BLOCK = CreateMechanicalMiners.REGISTRATE
 		.block("diamond_vein", DiamondVeinBlock::new)
 		.properties(p -> p.strength(1.5f))

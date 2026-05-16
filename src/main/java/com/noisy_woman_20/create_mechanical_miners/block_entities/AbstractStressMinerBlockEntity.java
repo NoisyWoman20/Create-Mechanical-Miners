@@ -1,15 +1,19 @@
 package com.noisy_woman_20.create_mechanical_miners.block_entities;
 
-import com.noisy_woman_20.create_mechanical_miners.CreateMechanicalMiners;
 import com.noisy_woman_20.create_mechanical_miners.blocks.AbstractStressMinerBlock;
+import com.noisy_woman_20.create_mechanical_miners.blocks.AbstractVeinBlock;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.ContainerHelper;
+import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
@@ -124,10 +128,6 @@ public abstract class AbstractStressMinerBlockEntity extends KineticBlockEntity 
 			return;
 		}
 
-		if (level.isClientSide()) {
-			return;
-		}
-
 		if (!(level.getBlockEntity(getBlockPos().above()) instanceof AbstractStressMinerBlockEntity upper)) {
 			return;
 		}
@@ -237,6 +237,78 @@ public abstract class AbstractStressMinerBlockEntity extends KineticBlockEntity 
 
 		lower.setSpeed(speed);
 		super.setSpeed(speed);
+	}
+
+	@Override
+	public void tick() {
+		super.tick();
+
+		updateSpeed();
+		mine();
+	}
+
+	protected void mine() {
+		if (isLower()) {
+			return;
+		}
+
+		if (level == null || level.isClientSide()) {
+			return;
+		}
+
+		float speed = Math.abs(getSpeed());
+
+		if (speed <= 0) {
+			return;
+		}
+
+		Block below = level.getBlockState(getBlockPos().below(2)).getBlock();
+
+		if (!(below instanceof AbstractVeinBlock)) {
+			return;
+		}
+
+		Item veinDrop = ((AbstractVeinBlock)below).getPrimaryOutput();
+
+		int mineCooldown = (int)(5120f / speed);
+
+		if (++mineTimer >= mineCooldown) {
+			itemHandler.insertItem(0, new ItemStack(veinDrop, 1), false);
+			mineTimer = 0;
+		}
+	}
+
+	public void dropItem() {
+		if (level == null) {
+			return;
+		}
+
+		if (level.isClientSide()) {
+			return;
+		}
+
+		if (isLower()) {
+			BlockEntity above = level.getBlockEntity(getBlockPos().above());
+
+			if (!(above instanceof AbstractStressMinerBlockEntity upper)) {
+				return;
+			}
+
+			if (!upper.getBlockClass().equals(getBlockClass())) {
+				return;
+			}
+
+			upper.dropItem();
+			return;
+		}
+
+		if (items.getFirst().isEmpty()) {
+			return;
+		}
+
+		Containers.dropItemStack(level, worldPosition.below().getX(), worldPosition.below().getY(), worldPosition.below().getZ(), items.getFirst());
+		items.set(0, ItemStack.EMPTY);
+		setChanged();
 	}
 
 	@Override

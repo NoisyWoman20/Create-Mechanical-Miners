@@ -17,6 +17,11 @@ public class CMMMenus {
 		() -> new MenuType<>(AndesiteStressMinerMenu::new, FeatureFlags.DEFAULT_FLAGS)
 	);
 
+	public static final Supplier<MenuType<BrassStressMinerMenu>> BRASS_STRESS_MINER_MENU = REGISTER.register(
+		"brass_stress_miner",
+		() -> new MenuType<>(BrassStressMinerMenu::new, FeatureFlags.DEFAULT_FLAGS)
+	);
+
 	public static void register(IEventBus bus) {
 		CreateMechanicalMiners.LOGGER.info("Registering menus...");
 		REGISTER.register(bus);

@@ -1,6 +1,7 @@
 {
 	"replace": false,
 	"values": [
-		"create_mechanical_miners:andesite_stress_miner"
+		"create_mechanical_miners:andesite_stress_miner",
+		"create_mechanical_miners:brass_stress_miner"
 	]
 }
