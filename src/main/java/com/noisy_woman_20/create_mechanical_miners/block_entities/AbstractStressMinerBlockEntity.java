@@ -3,15 +3,19 @@ package com.noisy_woman_20.create_mechanical_miners.block_entities;
 import com.noisy_woman_20.create_mechanical_miners.blocks.AbstractStressMinerBlock;
 import com.noisy_woman_20.create_mechanical_miners.blocks.AbstractVeinBlock;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
+import com.simibubi.create.foundation.utility.CreateLang;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -21,9 +25,14 @@ import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public abstract class AbstractStressMinerBlockEntity extends KineticBlockEntity implements MenuProvider {
 	protected int speedUpdateTimer = 0;
 	protected int mineTimer = 0;
+	protected double lastProgress = 0.0;
 
 	protected NonNullList<ItemStack> items = NonNullList.withSize(1, ItemStack.EMPTY);
 	public final IItemHandler itemHandler = new ItemHandler();
@@ -188,19 +197,19 @@ public abstract class AbstractStressMinerBlockEntity extends KineticBlockEntity 
 	@Override
 	public boolean isOverStressed() {
 		if (isUpper()) {
-			return super.isOverStressed();
+			return false;
 		}
 
 		if (level == null) {
-			return super.isOverStressed();
+			return false;
 		}
 
 		if (!(level.getBlockEntity(getBlockPos().above()) instanceof AbstractStressMinerBlockEntity upper)) {
-			return super.isOverStressed();
+			return false;
 		}
 
 		if (!upper.getBlockClass().equals(getBlockClass())) {
-			return super.isOverStressed();
+			return false;
 		}
 
 		return upper.isOverStressed();
@@ -264,18 +273,27 @@ public abstract class AbstractStressMinerBlockEntity extends KineticBlockEntity 
 
 		Block below = level.getBlockState(getBlockPos().below(2)).getBlock();
 
-		if (!(below instanceof AbstractVeinBlock)) {
+		if (!(below instanceof AbstractVeinBlock veinBlock)) {
 			return;
 		}
 
-		Item veinDrop = ((AbstractVeinBlock)below).getPrimaryOutput();
+		if (!isMineable(veinBlock)) {
+			return;
+		}
+
+		Item veinDrop = veinBlock.getOutput();
 
 		int mineCooldown = (int)(5120f / speed);
-
 		if (++mineTimer >= mineCooldown) {
 			itemHandler.insertItem(0, new ItemStack(veinDrop, 1), false);
 			mineTimer = 0;
+
+			lastProgress = 1.0;
+		} else {
+			lastProgress = Math.min(1.0, Math.max(0.0, (mineTimer / (5120.0 / speed))));
 		}
+
+		sendData();
 	}
 
 	public void dropItem() {
@@ -315,6 +333,10 @@ public abstract class AbstractStressMinerBlockEntity extends KineticBlockEntity 
 	protected void write(CompoundTag compound, HolderLookup.Provider registries, boolean clientPacket) {
 		super.write(compound, registries, clientPacket);
 		ContainerHelper.saveAllItems(compound, items, registries);
+
+		if (clientPacket) {
+			compound.putDouble("LastProgress", lastProgress);
+		}
 	}
 
 	@Override
@@ -322,5 +344,72 @@ public abstract class AbstractStressMinerBlockEntity extends KineticBlockEntity 
 		super.read(compound, registries, clientPacket);
 		items = NonNullList.withSize(1, ItemStack.EMPTY);
 		ContainerHelper.loadAllItems(compound, items, registries);
+
+		if (clientPacket && compound.contains("LastProgress")) {
+			lastProgress = compound.getDouble("LastProgress");
+		}
+	}
+
+	public abstract boolean isMineable(Block oreBlock);
+
+	protected static final Map<Item, Integer> ORE_COLORS = new HashMap<>();
+
+	static {
+		ORE_COLORS.put(Items.RAW_IRON, 0xd9b68b);
+		ORE_COLORS.put(Items.RAW_COPPER, 0xe07c3c);
+		ORE_COLORS.put(Items.RAW_GOLD, 0xf5c842);
+		ORE_COLORS.put(Items.DIAMOND, 0x55ffff);
+	}
+
+	@Override
+	public boolean addToGoggleTooltip(List<Component> tooltip, boolean isPlayerSneaking) {
+		boolean added = super.addToGoggleTooltip(tooltip, isPlayerSneaking);
+
+		if (level == null) {
+			return added;
+		}
+
+		AbstractStressMinerBlockEntity miner = this;
+		if (
+			isLower() &&
+			level.getBlockEntity(getBlockPos().above()) instanceof AbstractStressMinerBlockEntity upper &&
+			upper.getBlockClass().equals(getBlockClass())
+		) {
+			miner = upper;
+		}
+		if (miner.isLower()) {
+			return added;
+		}
+
+		Block below = level.getBlockState(miner.getBlockPos().below(2)).getBlock();
+		if (!(below instanceof AbstractVeinBlock veinBlock)) {
+			return added;
+		}
+
+		CreateLang.builder().add(Component.literal("")).forGoggles(tooltip);
+
+		if (!isMineable(veinBlock)) {
+			CreateLang.builder()
+				.add(Component.translatable("gui.goggles.stress_miner.incompatible_ore").withStyle(ChatFormatting.RED))
+				.forGoggles(tooltip);
+
+			return added;
+		}
+
+		int mined = (int)Math.round((miner.lastProgress * 32));
+
+		CreateLang.builder()
+			.add(Component.translatable("gui.goggles.stress_miner.currently_mining").withStyle(ChatFormatting.GRAY))
+			.add(Component.translatable(veinBlock.getOutput().getDescriptionId()).withColor(ORE_COLORS.getOrDefault(veinBlock.getOutput(), 0xffffff)))
+			.forGoggles(tooltip);
+		CreateLang.builder()
+			.add(Component.translatable("gui.goggles.stress_miner.mining_progress").withStyle(ChatFormatting.GRAY))
+			.add(Component.literal("[").withStyle(ChatFormatting.GRAY))
+			.add(Component.literal("|".repeat(mined)).withStyle(ChatFormatting.GRAY))
+			.add(Component.literal("|".repeat((32 - mined))).withStyle(ChatFormatting.DARK_GRAY))
+			.add(Component.literal("]").withStyle(ChatFormatting.GRAY))
+			.forGoggles(tooltip);
+
+		return added;
 	}
 }

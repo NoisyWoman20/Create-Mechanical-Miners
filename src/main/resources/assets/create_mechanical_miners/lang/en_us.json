@@ -16,10 +16,22 @@
 
 	"item_group.create_mechanical_miners.create_mechanical_miners_tab": "Create: Mechanical Miners",
 
-	"create_mechanical_miners.ponder.andesite_stress_miner.header": "Mine it with an Andesite Stress Miner",
-	"create_mechanical_miners.ponder.andesite_stress_miner.text_1": "This is a Diamond Vein",
-	"create_mechanical_miners.ponder.andesite_stress_miner.text_2": "It can be mined with an Andesite Stress Miner",
-	"create_mechanical_miners.ponder.andesite_stress_miner.text_3": "Mined ores are stored in the Andesite Stress Miner's internal inventory",
+	"gui.goggles.stress_miner.currently_mining": "Currently mining: ",
+	"gui.goggles.stress_miner.mining_progress": "Mining Progress: ",
+	"gui.goggles.stress_miner.incompatible_ore": "This tier of miner cannot mine this ore.",
+
+	"create_mechanical_miners.ponder.andesite_stress_miner.header": "Mining with an Andesite Stress Miner",
+	"create_mechanical_miners.ponder.andesite_stress_miner.text_1": "While exploring, you may come across ore veins like this one",
+	"create_mechanical_miners.ponder.andesite_stress_miner.text_2": "A Stress Miner can continuously extract resources from the vein",
+	"create_mechanical_miners.ponder.andesite_stress_miner.text_3": "Mined ores are stored inside the miner's internal inventory",
+	"create_mechanical_miners.ponder.andesite_stress_miner.text_4": "However, the miner only has a single storage slot",
+	"create_mechanical_miners.ponder.andesite_stress_miner.text_5": "Once the slot is full, the miner will stop working",
+	"create_mechanical_miners.ponder.andesite_stress_miner.text_6": "You can extract items using a funnel and a mechanical belt",
+
+	"create_mechanical_miners.ponder.brass_stress_miner.header": "Mining Advanced Ores with a Brass Stress Miner",
+	"create_mechanical_miners.ponder.brass_stress_miner.text_1": "Sometimes, you may find higher-tier ore veins while exploring",
+	"create_mechanical_miners.ponder.brass_stress_miner.text_2": "These advanced veins need to be mined with a Brass Stress Miner",
+	"create_mechanical_miners.ponder.brass_stress_miner.text_3": "Remember to extract the ores in time using funnels and belts",
 
 	"create_mechanical_miners.tooltip.stress_impact": "Kinetic Stress Impact:",
 	"create_mechanical_miners.tooltip.stress_impact.low": " █▒▒ Low",

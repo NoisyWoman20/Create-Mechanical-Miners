@@ -28,6 +28,13 @@ public class CMMPonders implements PonderPlugin {
 				AndesiteStressMinerScene::scene,
 				AllCreatePonderTags.KINETIC_APPLIANCES
 			);
+
+		HELPER.forComponents(CMMBlocks.BRASS_STRESS_MINER_BLOCK)
+			.addStoryBoard(
+				ResourceLocation.fromNamespaceAndPath(CreateMechanicalMiners.MOD_ID, "brass_stress_miner"),
+				BrassStressMinerScene::scene,
+				AllCreatePonderTags.KINETIC_APPLIANCES
+			);
 	}
 
 	@Override
@@ -35,6 +42,7 @@ public class CMMPonders implements PonderPlugin {
 		PonderTagRegistrationHelper<RegistryEntry<?, ?>> HELPER = helper.withKeyFunction(RegistryEntry::getId);
 
 		HELPER.addToTag(AllCreatePonderTags.KINETIC_APPLIANCES).add(CMMBlocks.ANDESITE_STRESS_MINER_BLOCK);
+		HELPER.addToTag(AllCreatePonderTags.KINETIC_APPLIANCES).add(CMMBlocks.BRASS_STRESS_MINER_BLOCK);
 	}
 
 	public static void register() {

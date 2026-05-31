@@ -10,11 +10,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import org.jetbrains.annotations.NotNull;
 
-public class AndesiteStressMinerScene {
+public class BrassStressMinerScene {
 	public static void scene(@NotNull SceneBuilder builder, @NotNull SceneBuildingUtil util) {
 		CreateSceneBuilder scene = new CreateSceneBuilder(builder);
 
-		scene.title("andesite_stress_miner", "使用安山应力矿机来开采矿物");
+		scene.title("brass_stress_miner", "使用黄铜应力矿机来开采高级矿物");
 		scene.configureBasePlate(0, 0, 5);
 
 		scene.world().showSection(util.select().layer(0).substract(util.select().position(1, 0, 5)), Direction.UP);
@@ -23,9 +23,9 @@ public class AndesiteStressMinerScene {
 
 		scene.overlay()
 			.showText(60)
-			.text("在探索世界时，你可能遇见像这样的矿脉")
-			.attachKeyFrame()
+			.text("有些时候，你可能在矿洞中发现更高级的矿脉")
 			.pointAt(util.vector().blockSurface(util.grid().at(2, 0, 2), Direction.UP))
+			.attachKeyFrame()
 			.placeNearTarget();
 		scene.idle(60);
 
@@ -61,36 +61,9 @@ public class AndesiteStressMinerScene {
 
 		scene.overlay()
 			.showText(60)
-			.text("使用矿机可以从矿脉中持续产出矿物")
+			.text("这些高级矿脉需要用黄铜应力矿机开采")
 			.pointAt(util.vector().blockSurface(util.grid().at(2, 0, 2), Direction.UP))
 			.attachKeyFrame()
-			.placeNearTarget();
-		scene.idle(60);
-
-		scene.idle(10);
-
-		scene.overlay()
-			.showText(60)
-			.text("开采得到的矿物会暂存在矿机内部")
-			.pointAt(util.vector().blockSurface(util.grid().at(2, 1, 2), Direction.UP))
-			.placeNearTarget();
-		scene.idle(60);
-
-		scene.idle(10);
-
-		scene.overlay()
-			.showText(60)
-			.text("但矿机只有一个储存槽位")
-			.pointAt(util.vector().blockSurface(util.grid().at(2, 1, 2), Direction.UP))
-			.placeNearTarget();
-		scene.idle(60);
-
-		scene.idle(10);
-
-		scene.overlay()
-			.showText(60)
-			.text("槽位填满后，矿机将会停止工作")
-			.pointAt(util.vector().blockSurface(util.grid().at(2, 1, 2), Direction.UP))
 			.placeNearTarget();
 		scene.idle(60);
 
@@ -116,7 +89,7 @@ public class AndesiteStressMinerScene {
 
 		scene.overlay()
 			.showText(60)
-			.text("可以用漏斗和传送带从矿机中提取矿物")
+			.text("别忘了用漏斗和传送带把矿物及时提取出来")
 			.pointAt(util.vector().blockSurface(util.grid().at(1, 2, 2), Direction.UP))
 			.attachKeyFrame()
 			.placeNearTarget();
@@ -125,33 +98,34 @@ public class AndesiteStressMinerScene {
 		scene.idle(10);
 
 		scene.world().modifyBlockEntity(util.grid().at(1, 2, 2), FunnelBlockEntity.class, be -> be.flap(false));
-		scene.world().createItemOnBelt(util.grid().at(1, 1, 2), Direction.EAST, new ItemStack(Items.RAW_IRON));
+		scene.world().createItemOnBelt(util.grid().at(1, 1, 2), Direction.EAST, new ItemStack(Items.DIAMOND));
 		scene.idle(10);
 		scene.world().modifyBlockEntity(util.grid().at(1, 2, 2), FunnelBlockEntity.class, be -> be.flap(false));
-		scene.world().createItemOnBelt(util.grid().at(1, 1, 2), Direction.EAST, new ItemStack(Items.RAW_IRON));
+		scene.world().createItemOnBelt(util.grid().at(1, 1, 2), Direction.EAST, new ItemStack(Items.DIAMOND));
 		scene.idle(10);
 		scene.world().modifyBlockEntity(util.grid().at(1, 2, 2), FunnelBlockEntity.class, be -> be.flap(false));
-		scene.world().createItemOnBelt(util.grid().at(1, 1, 2), Direction.EAST, new ItemStack(Items.RAW_IRON));
+		scene.world().createItemOnBelt(util.grid().at(1, 1, 2), Direction.EAST, new ItemStack(Items.DIAMOND));
 		scene.idle(10);
 		scene.world().modifyBlockEntity(util.grid().at(1, 2, 2), FunnelBlockEntity.class, be -> be.flap(false));
-		scene.world().createItemOnBelt(util.grid().at(1, 1, 2), Direction.EAST, new ItemStack(Items.RAW_IRON));
+		scene.world().createItemOnBelt(util.grid().at(1, 1, 2), Direction.EAST, new ItemStack(Items.DIAMOND));
 		scene.idle(10);
 		scene.world().modifyBlockEntity(util.grid().at(1, 2, 2), FunnelBlockEntity.class, be -> be.flap(false));
-		scene.world().createItemOnBelt(util.grid().at(1, 1, 2), Direction.EAST, new ItemStack(Items.RAW_IRON));
+		scene.world().createItemOnBelt(util.grid().at(1, 1, 2), Direction.EAST, new ItemStack(Items.DIAMOND));
 		scene.idle(10);
 		scene.world().modifyBlockEntity(util.grid().at(1, 2, 2), FunnelBlockEntity.class, be -> be.flap(false));
-		scene.world().createItemOnBelt(util.grid().at(1, 1, 2), Direction.EAST, new ItemStack(Items.RAW_IRON));
+		scene.world().createItemOnBelt(util.grid().at(1, 1, 2), Direction.EAST, new ItemStack(Items.DIAMOND));
 		scene.idle(10);
 		scene.world().modifyBlockEntity(util.grid().at(1, 2, 2), FunnelBlockEntity.class, be -> be.flap(false));
-		scene.world().createItemOnBelt(util.grid().at(1, 1, 2), Direction.EAST, new ItemStack(Items.RAW_IRON));
+		scene.world().createItemOnBelt(util.grid().at(1, 1, 2), Direction.EAST, new ItemStack(Items.DIAMOND));
 		scene.idle(10);
 		scene.world().modifyBlockEntity(util.grid().at(1, 2, 2), FunnelBlockEntity.class, be -> be.flap(false));
-		scene.world().createItemOnBelt(util.grid().at(1, 1, 2), Direction.EAST, new ItemStack(Items.RAW_IRON));
+		scene.world().createItemOnBelt(util.grid().at(1, 1, 2), Direction.EAST, new ItemStack(Items.DIAMOND));
 		scene.idle(10);
 		scene.world().modifyBlockEntity(util.grid().at(1, 2, 2), FunnelBlockEntity.class, be -> be.flap(false));
-		scene.world().createItemOnBelt(util.grid().at(1, 1, 2), Direction.EAST, new ItemStack(Items.RAW_IRON));
+		scene.world().createItemOnBelt(util.grid().at(1, 1, 2), Direction.EAST, new ItemStack(Items.DIAMOND));
 		scene.idle(10);
 		scene.world().modifyBlockEntity(util.grid().at(1, 2, 2), FunnelBlockEntity.class, be -> be.flap(false));
-		scene.world().createItemOnBelt(util.grid().at(1, 1, 2), Direction.EAST, new ItemStack(Items.RAW_IRON));
+		scene.world().createItemOnBelt(util.grid().at(1, 1, 2), Direction.EAST, new ItemStack(Items.DIAMOND));
+		scene.idle(10);
 	}
 }

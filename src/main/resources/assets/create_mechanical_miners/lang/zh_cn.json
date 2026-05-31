@@ -16,10 +16,22 @@
 
 	"item_group.create_mechanical_miners.create_mechanical_miners_tab": "机械动力：机械矿机",
 
+	"gui.goggles.stress_miner.currently_mining": "开采中的矿物：",
+	"gui.goggles.stress_miner.mining_progress": "开采进度：",
+	"gui.goggles.stress_miner.incompatible_ore": "该型号矿机无法开采此类矿物",
+
 	"create_mechanical_miners.ponder.andesite_stress_miner.header": "使用安山应力矿机来开采矿物",
-	"create_mechanical_miners.ponder.andesite_stress_miner.text_1": "这是钻石矿脉",
-	"create_mechanical_miners.ponder.andesite_stress_miner.text_2": "可以使用安山应力矿机来开采",
-	"create_mechanical_miners.ponder.andesite_stress_miner.text_3": "开采出的矿石会存储在安山应力矿机内部",
+	"create_mechanical_miners.ponder.andesite_stress_miner.text_1": "在探索世界时，你可能遇见像这样的矿脉",
+	"create_mechanical_miners.ponder.andesite_stress_miner.text_2": "使用矿机可以从矿脉中持续产出矿物",
+	"create_mechanical_miners.ponder.andesite_stress_miner.text_3": "开采得到的矿物会暂存在矿机内部",
+	"create_mechanical_miners.ponder.andesite_stress_miner.text_4": "但矿机只有一个储存槽位",
+	"create_mechanical_miners.ponder.andesite_stress_miner.text_5": "槽位填满后，矿机将会停止工作",
+	"create_mechanical_miners.ponder.andesite_stress_miner.text_6": "可以用漏斗和传送带从矿机中提取矿物",
+
+	"create_mechanical_miners.ponder.brass_stress_miner.header": "使用黄铜应力矿机来开采高级矿物",
+	"create_mechanical_miners.ponder.brass_stress_miner.text_1": "有些时候，你可能在矿洞中发现更高级的矿脉",
+	"create_mechanical_miners.ponder.brass_stress_miner.text_2": "这些高级矿脉需要用黄铜应力矿机开采",
+	"create_mechanical_miners.ponder.brass_stress_miner.text_3": "别忘了用漏斗和传送带把矿物及时提取出来",
 
 	"create_mechanical_miners.tooltip.stress_impact": "应力影响：",
 	"create_mechanical_miners.tooltip.stress_impact.low": " █▒▒ 低",

@@ -2,12 +2,14 @@ package com.noisy_woman_20.create_mechanical_miners.blocks;
 
 import com.noisy_woman_20.create_mechanical_miners.block_entities.AbstractStressMinerBlockEntity;
 import com.simibubi.create.content.equipment.wrench.IWrenchable;
+import com.simibubi.create.content.kinetics.base.KineticBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.context.UseOnContext;
@@ -45,7 +47,8 @@ public abstract class AbstractStressMinerBlock extends AbstractKineticBlock {
 	public @Nullable BlockState getStateForPlacement(@NotNull BlockPlaceContext context) {
 		BlockPos clickedPos = context.getClickedPos();
 		Level level = context.getLevel();
-		if (clickedPos.getY() < level.getMaxBuildHeight() - 1 && level.getBlockState(clickedPos.above()).isAir()) {
+		BlockState aboveState = level.getBlockState(clickedPos.above());
+		if (clickedPos.getY() < level.getMaxBuildHeight() - 1 && (aboveState.isAir() || !aboveState.getFluidState().isEmpty())) {
 			return this.defaultBlockState().setValue(HALF, DoubleBlockHalf.LOWER);
 		}
 		return null;
@@ -58,7 +61,8 @@ public abstract class AbstractStressMinerBlock extends AbstractKineticBlock {
 		}
 
 		BlockPos abovePos = pos.above();
-		if (level.getBlockState(abovePos).isAir()) {
+		BlockState aboveState = level.getBlockState(abovePos);
+		if (aboveState.isAir() || !aboveState.getFluidState().isEmpty()) {
 			level.setBlock(abovePos, this.defaultBlockState().setValue(HALF, DoubleBlockHalf.UPPER), 3);
 		}
 	}
@@ -183,6 +187,11 @@ public abstract class AbstractStressMinerBlock extends AbstractKineticBlock {
 		@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos,
 		@NotNull Player player, @NotNull BlockHitResult hitResult
 	) {
+		ItemStack heldItem = player.getMainHandItem();
+		if (heldItem.getItem() instanceof BlockItem blockItem && blockItem.getBlock() instanceof KineticBlock) {
+			return InteractionResult.PASS;
+		}
+
 		if (!level.isClientSide()) {
 			BlockEntity be = level.getBlockEntity(pos);
 			if (state.getValue(HALF) == DoubleBlockHalf.LOWER) {

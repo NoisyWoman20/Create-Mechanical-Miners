@@ -3,7 +3,6 @@ package com.noisy_woman_20.create_mechanical_miners.blocks;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 public class DeepslateIronVeinBlock extends AbstractVeinBlock {
 	public DeepslateIronVeinBlock(Properties properties) {
@@ -11,12 +10,7 @@ public class DeepslateIronVeinBlock extends AbstractVeinBlock {
 	}
 
 	@Override
-	public @NotNull Item getPrimaryOutput() {
+	public @NotNull Item getOutput() {
 		return Items.RAW_IRON;
-	}
-
-	@Override
-	public @Nullable Item getSecondaryOutput() {
-		return null;
 	}
 }
