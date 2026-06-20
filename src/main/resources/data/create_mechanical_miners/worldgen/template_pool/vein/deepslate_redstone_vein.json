@@ -1,0 +1,14 @@
+{
+	"fallback": "minecraft:empty",
+	"elements": [
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"projection": "rigid",
+				"location": "create_mechanical_miners:vein/deepslate_redstone_vein",
+				"processors": "create_mechanical_miners:replace_stone_and_deepslate_with_redstone_ore_and_deepslate_redstone_ore"
+			}
+		}
+	]
+}

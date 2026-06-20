@@ -14,6 +14,12 @@
 		"create_mechanical_miners:deepslate_gold_vein",
 
 		"create_mechanical_miners:copper_vein",
-		"create_mechanical_miners:deepslate_copper_vein"
+		"create_mechanical_miners:deepslate_copper_vein",
+
+		"create_mechanical_miners:emerald_vein",
+		"create_mechanical_miners:deepslate_emerald_vein",
+
+		"create_mechanical_miners:redstone_vein",
+		"create_mechanical_miners:deepslate_redstone_vein"
 	]
 }

@@ -359,6 +359,8 @@ public abstract class AbstractStressMinerBlockEntity extends KineticBlockEntity 
 		ORE_COLORS.put(Items.RAW_COPPER, 0xe07c3c);
 		ORE_COLORS.put(Items.RAW_GOLD, 0xf5c842);
 		ORE_COLORS.put(Items.DIAMOND, 0x55ffff);
+		ORE_COLORS.put(Items.EMERALD, 0x00ff7f);
+		ORE_COLORS.put(Items.REDSTONE, 0xee0000);
 	}
 
 	@Override

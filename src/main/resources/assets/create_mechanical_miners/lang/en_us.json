@@ -14,6 +14,12 @@
 	"block.create_mechanical_miners.copper_vein": "Copper Vein",
 	"block.create_mechanical_miners.deepslate_copper_vein": "Deepslate Copper Vein",
 
+	"block.create_mechanical_miners.emerald_vein": "Emerald Vein",
+	"block.create_mechanical_miners.deepslate_emerald_vein": "Deepslate Emerald Vein",
+
+	"block.create_mechanical_miners.redstone_vein": "Redstone Vein",
+	"block.create_mechanical_miners.deepslate_redstone_vein": "Deepslate Redstone Vein",
+
 	"item_group.create_mechanical_miners.create_mechanical_miners_tab": "Create: Mechanical Miners",
 
 	"gui.goggles.stress_miner.currently_mining": "Currently mining: ",
