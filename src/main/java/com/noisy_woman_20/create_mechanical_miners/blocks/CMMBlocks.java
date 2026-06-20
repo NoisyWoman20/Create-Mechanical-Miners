@@ -131,6 +131,24 @@ public class CMMBlocks {
 		.properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
 		.register();
 
+	public static final BlockEntry<LapisVeinBlock> LAPIS_VEIN_BLOCK = CreateMechanicalMiners.REGISTRATE
+		.block("lapis_vein", LapisVeinBlock::new)
+		.properties(p -> p.strength(1.5f))
+		.properties(p -> p.explosionResistance(6f))
+		.properties(p -> p.mapColor(MapColor.STONE))
+		.properties(p -> p.sound(SoundType.STONE))
+		.properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
+		.register();
+
+	public static final BlockEntry<DeepslateLapisVeinBlock> DEEPSLATE_LAPIS_VEIN_BLOCK = CreateMechanicalMiners.REGISTRATE
+		.block("deepslate_lapis_vein", DeepslateLapisVeinBlock::new)
+		.properties(p -> p.strength(1.5f))
+		.properties(p -> p.explosionResistance(6f))
+		.properties(p -> p.mapColor(MapColor.STONE))
+		.properties(p -> p.sound(SoundType.DEEPSLATE))
+		.properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
+		.register();
+
 	public static void register() {
 		CreateMechanicalMiners.LOGGER.info("Registering blocks...");
 	}

@@ -38,6 +38,9 @@ public class CMMCreativeModeTabs {
 				output.accept(CMMItems.EMERALD_VEIN_ITEM.get());
 				output.accept(CMMItems.DEEPSLATE_EMERALD_VEIN_ITEM.get());
 
+				output.accept(CMMItems.LAPIS_VEIN_ITEM.get());
+				output.accept(CMMItems.DEEPSLATE_LAPIS_VEIN_ITEM.get());
+
 				output.accept(CMMItems.DIAMOND_VEIN_ITEM.get());
 				output.accept(CMMItems.DEEPSLATE_DIAMOND_VEIN_ITEM.get());
 			})

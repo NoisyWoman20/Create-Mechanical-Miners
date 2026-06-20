@@ -20,6 +20,9 @@
 	"block.create_mechanical_miners.redstone_vein": "红石矿脉",
 	"block.create_mechanical_miners.deepslate_redstone_vein": "深层红石矿脉",
 
+	"block.create_mechanical_miners.lapis_vein": "青金石矿脉",
+	"block.create_mechanical_miners.deepslate_lapis_vein": "深层青金石矿脉",
+
 	"item_group.create_mechanical_miners.create_mechanical_miners_tab": "机械动力：机械矿机",
 
 	"gui.goggles.stress_miner.currently_mining": "开采中的矿物：",

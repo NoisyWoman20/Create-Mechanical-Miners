@@ -60,6 +60,14 @@ public class CMMItems {
 		.item("deepslate_redstone_vein", DeepslateRedstoneVeinItem::new)
 		.register();
 
+	public static final ItemEntry<LapisVeinItem> LAPIS_VEIN_ITEM = CreateMechanicalMiners.REGISTRATE
+		.item("lapis_vein", LapisVeinItem::new)
+		.register();
+
+	public static final ItemEntry<DeepslateLapisVeinItem> DEEPSLATE_LAPIS_VEIN_ITEM = CreateMechanicalMiners.REGISTRATE
+		.item("deepslate_lapis_vein", DeepslateLapisVeinItem::new)
+		.register();
+
 	public static void register() {
 		CreateMechanicalMiners.LOGGER.info("Registering items...");
 	}

@@ -13,8 +13,12 @@
 		"salt": 1919810,
 		"type": "minecraft:random_spread",
 		"spread_type": "linear",
-		"spacing": 20,
-		"separation": 3,
-		"biomes": "#minecraft:is_mountain"
+		"spacing": 50,
+		"separation": 10,
+		"biomes": "#minecraft:is_mountain",
+		"exclusion_zone": {
+			"other_set": "create_mechanical_miners:vein",
+			"chunk_count": 16
+		}
 	}
 }

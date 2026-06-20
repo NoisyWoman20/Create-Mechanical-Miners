@@ -20,6 +20,9 @@
 		"create_mechanical_miners:deepslate_emerald_vein",
 
 		"create_mechanical_miners:redstone_vein",
-		"create_mechanical_miners:deepslate_redstone_vein"
+		"create_mechanical_miners:deepslate_redstone_vein",
+
+		"create_mechanical_miners:lapis_vein",
+		"create_mechanical_miners:deepslate_lapis_vein"
 	]
 }
