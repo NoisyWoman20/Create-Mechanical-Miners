@@ -52,7 +52,7 @@ public class CMMBlocks {
 
 	public static final BlockEntry<DeepslateIronVeinBlock> DEEPSLATE_IRON_VEIN_BLOCK = CreateMechanicalMiners.REGISTRATE
 		.block("deepslate_iron_vein", DeepslateIronVeinBlock::new)
-		.properties(p -> p.strength(1.5f))
+		.properties(p -> p.strength(3f))
 		.properties(p -> p.explosionResistance(6f))
 		.properties(p -> p.mapColor(MapColor.STONE))
 		.properties(p -> p.sound(SoundType.DEEPSLATE))
@@ -70,7 +70,7 @@ public class CMMBlocks {
 
 	public static final BlockEntry<DeepslateGoldVeinBlock> DEEPSLATE_GOLD_VEIN_BLOCK = CreateMechanicalMiners.REGISTRATE
 		.block("deepslate_gold_vein", DeepslateGoldVeinBlock::new)
-		.properties(p -> p.strength(1.5f))
+		.properties(p -> p.strength(3f))
 		.properties(p -> p.explosionResistance(6f))
 		.properties(p -> p.mapColor(MapColor.STONE))
 		.properties(p -> p.sound(SoundType.DEEPSLATE))
@@ -88,7 +88,7 @@ public class CMMBlocks {
 
 	public static final BlockEntry<DeepslateCopperVeinBlock> DEEPSLATE_COPPER_VEIN_BLOCK = CreateMechanicalMiners.REGISTRATE
 		.block("deepslate_copper_vein", DeepslateCopperVeinBlock::new)
-		.properties(p -> p.strength(1.5f))
+		.properties(p -> p.strength(3f))
 		.properties(p -> p.explosionResistance(6f))
 		.properties(p -> p.mapColor(MapColor.STONE))
 		.properties(p -> p.sound(SoundType.DEEPSLATE))
