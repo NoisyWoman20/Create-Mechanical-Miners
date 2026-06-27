@@ -17,7 +17,7 @@ public class BrassStressMinerBlock extends AbstractStressMinerBlock implements I
 
 	@Override
 	public float getStressImpact() {
-		return 256f;
+		return 512f;
 	}
 
 	@Override

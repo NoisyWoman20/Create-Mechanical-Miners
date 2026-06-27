@@ -2,6 +2,7 @@ package com.noisy_woman_20.create_mechanical_miners.block_entities;
 
 import com.noisy_woman_20.create_mechanical_miners.blocks.AbstractStressMinerBlock;
 import com.noisy_woman_20.create_mechanical_miners.blocks.AbstractVeinBlock;
+import com.simibubi.create.AllItems;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
 import com.simibubi.create.foundation.utility.CreateLang;
 import net.minecraft.ChatFormatting;
@@ -364,6 +365,7 @@ public abstract class AbstractStressMinerBlockEntity extends KineticBlockEntity 
 		ORE_COLORS.put(Items.LAPIS_LAZULI, 0x2144d4);
 		ORE_COLORS.put(Items.COAL, 0x1a1a1a);
 		ORE_COLORS.put(Items.AMETHYST_SHARD, 0xaa66cc);
+		ORE_COLORS.put(AllItems.RAW_ZINC.get(), 0xa5c0a0);
 	}
 
 	@Override

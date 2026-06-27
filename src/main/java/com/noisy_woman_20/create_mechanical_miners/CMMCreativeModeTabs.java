@@ -48,6 +48,9 @@ public class CMMCreativeModeTabs {
 				output.accept(CMMItems.DEEPSLATE_DIAMOND_VEIN_ITEM.get());
 
 				output.accept(CMMItems.AMETHYST_VEIN_ITEM.get());
+
+				output.accept(CMMItems.ZINC_VEIN_ITEM.get());
+				output.accept(CMMItems.DEEPSLATE_ZINC_VEIN_ITEM.get());
 			})
 			.build()
 	);

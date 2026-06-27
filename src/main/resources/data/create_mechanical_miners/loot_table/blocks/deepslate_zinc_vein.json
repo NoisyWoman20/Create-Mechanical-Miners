@@ -7,7 +7,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "minecraft:raw_copper",
+					"name": "create:raw_zinc",
 					"functions": [
 						{
 							"function": "minecraft:set_count",
@@ -33,5 +33,5 @@
 			]
 		}
 	],
-	"random_sequence": "create_mechanical_miners:blocks/copper_vein"
+	"random_sequence": "create_mechanical_miners:blocks/deepslate_zinc_vein"
 }

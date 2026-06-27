@@ -80,6 +80,14 @@ public class CMMItems {
 		.item("amethyst_vein", AmethystVeinItem::new)
 		.register();
 
+	public static final ItemEntry<ZincVeinItem> ZINC_VEIN_ITEM = CreateMechanicalMiners.REGISTRATE
+		.item("zinc_vein", ZincVeinItem::new)
+		.register();
+
+	public static final ItemEntry<DeepslateZincVeinItem> DEEPSLATE_ZINC_VEIN_ITEM = CreateMechanicalMiners.REGISTRATE
+		.item("deepslate_zinc_vein", DeepslateZincVeinItem::new)
+		.register();
+
 	public static void register() {
 		CreateMechanicalMiners.LOGGER.info("Registering items...");
 	}

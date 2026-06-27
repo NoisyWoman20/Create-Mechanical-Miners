@@ -176,6 +176,24 @@ public class CMMBlocks {
 		.properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
 		.register();
 
+	public static final BlockEntry<ZincVeinBlock> ZINC_VEIN_BLOCK = CreateMechanicalMiners.REGISTRATE
+		.block("zinc_vein", ZincVeinBlock::new)
+		.properties(p -> p.strength(1.5f))
+		.properties(p -> p.explosionResistance(6f))
+		.properties(p -> p.mapColor(MapColor.STONE))
+		.properties(p -> p.sound(SoundType.STONE))
+		.properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
+		.register();
+
+	public static final BlockEntry<DeepslateZincVeinBlock> DEEPSLATE_ZINC_VEIN_BLOCK = CreateMechanicalMiners.REGISTRATE
+		.block("deepslate_zinc_vein", DeepslateZincVeinBlock::new)
+		.properties(p -> p.strength(3f))
+		.properties(p -> p.explosionResistance(6f))
+		.properties(p -> p.mapColor(MapColor.STONE))
+		.properties(p -> p.sound(SoundType.DEEPSLATE))
+		.properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
+		.register();
+
 	public static void register() {
 		CreateMechanicalMiners.LOGGER.info("Registering blocks...");
 	}

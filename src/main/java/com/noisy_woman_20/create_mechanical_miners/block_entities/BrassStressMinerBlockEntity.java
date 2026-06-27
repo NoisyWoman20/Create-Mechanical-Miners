@@ -51,6 +51,9 @@ public class BrassStressMinerBlockEntity extends AbstractStressMinerBlockEntity 
 		MINEABLE_ORES.add(CMMBlocks.DEEPSLATE_COAL_VEIN_BLOCK.get());
 
 		MINEABLE_ORES.add(CMMBlocks.AMETHYST_VEIN_BLOCK.get());
+
+		MINEABLE_ORES.add(CMMBlocks.ZINC_VEIN_BLOCK.get());
+		MINEABLE_ORES.add(CMMBlocks.DEEPSLATE_ZINC_VEIN_BLOCK.get());
 	}
 
 	@Override
@@ -60,7 +63,7 @@ public class BrassStressMinerBlockEntity extends AbstractStressMinerBlockEntity 
 
 	@Override
 	public float calculateStressApplied() {
-		this.lastStressApplied = 256f;
+		this.lastStressApplied = 512f;
 		return this.lastStressApplied;
 	}
 
