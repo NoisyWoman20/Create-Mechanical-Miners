@@ -106,7 +106,7 @@ public class CMMBlocks {
 
 	public static final BlockEntry<DeepslateEmeraldVeinBlock> DEEPSLATE_EMERALD_VEIN_BLOCK = CreateMechanicalMiners.REGISTRATE
 		.block("deepslate_emerald_vein", DeepslateEmeraldVeinBlock::new)
-		.properties(p -> p.strength(1.5f))
+		.properties(p -> p.strength(3f))
 		.properties(p -> p.explosionResistance(6f))
 		.properties(p -> p.mapColor(MapColor.STONE))
 		.properties(p -> p.sound(SoundType.DEEPSLATE))
@@ -124,7 +124,7 @@ public class CMMBlocks {
 
 	public static final BlockEntry<DeepslateRedstoneVeinBlock> DEEPSLATE_REDSTONE_VEIN_BLOCK = CreateMechanicalMiners.REGISTRATE
 		.block("deepslate_redstone_vein", DeepslateRedstoneVeinBlock::new)
-		.properties(p -> p.strength(1.5f))
+		.properties(p -> p.strength(3f))
 		.properties(p -> p.explosionResistance(6f))
 		.properties(p -> p.mapColor(MapColor.STONE))
 		.properties(p -> p.sound(SoundType.DEEPSLATE))
@@ -142,10 +142,37 @@ public class CMMBlocks {
 
 	public static final BlockEntry<DeepslateLapisVeinBlock> DEEPSLATE_LAPIS_VEIN_BLOCK = CreateMechanicalMiners.REGISTRATE
 		.block("deepslate_lapis_vein", DeepslateLapisVeinBlock::new)
-		.properties(p -> p.strength(1.5f))
+		.properties(p -> p.strength(3f))
 		.properties(p -> p.explosionResistance(6f))
 		.properties(p -> p.mapColor(MapColor.STONE))
 		.properties(p -> p.sound(SoundType.DEEPSLATE))
+		.properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
+		.register();
+
+	public static final BlockEntry<CoalVeinBlock> COAL_VEIN_BLOCK = CreateMechanicalMiners.REGISTRATE
+		.block("coal_vein", CoalVeinBlock::new)
+		.properties(p -> p.strength(1.5f))
+		.properties(p -> p.explosionResistance(6f))
+		.properties(p -> p.mapColor(MapColor.STONE))
+		.properties(p -> p.sound(SoundType.STONE))
+		.properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
+		.register();
+
+	public static final BlockEntry<DeepslateCoalVeinBlock> DEEPSLATE_COAL_VEIN_BLOCK = CreateMechanicalMiners.REGISTRATE
+		.block("deepslate_coal_vein", DeepslateCoalVeinBlock::new)
+		.properties(p -> p.strength(3f))
+		.properties(p -> p.explosionResistance(6f))
+		.properties(p -> p.mapColor(MapColor.STONE))
+		.properties(p -> p.sound(SoundType.DEEPSLATE))
+		.properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
+		.register();
+
+	public static final BlockEntry<AmethystVeinBlock> AMETHYST_VEIN_BLOCK = CreateMechanicalMiners.REGISTRATE
+		.block("amethyst_vein", AmethystVeinBlock::new)
+		.properties(p -> p.strength(1.5f))
+		.properties(p -> p.explosionResistance(6f))
+		.properties(p -> p.mapColor(MapColor.COLOR_PURPLE))
+		.properties(p -> p.sound(SoundType.AMETHYST))
 		.properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
 		.register();
 

@@ -68,6 +68,18 @@ public class CMMItems {
 		.item("deepslate_lapis_vein", DeepslateLapisVeinItem::new)
 		.register();
 
+	public static final ItemEntry<CoalVeinItem> COAL_VEIN_ITEM = CreateMechanicalMiners.REGISTRATE
+		.item("coal_vein", CoalVeinItem::new)
+		.register();
+
+	public static final ItemEntry<DeepslateCoalVeinItem> DEEPSLATE_COAL_VEIN_ITEM = CreateMechanicalMiners.REGISTRATE
+		.item("deepslate_coal_vein", DeepslateCoalVeinItem::new)
+		.register();
+
+	public static final ItemEntry<AmethystVeinItem> AMETHYST_VEIN_ITEM = CreateMechanicalMiners.REGISTRATE
+		.item("amethyst_vein", AmethystVeinItem::new)
+		.register();
+
 	public static void register() {
 		CreateMechanicalMiners.LOGGER.info("Registering items...");
 	}

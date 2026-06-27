@@ -23,6 +23,11 @@
 		"create_mechanical_miners:deepslate_redstone_vein",
 
 		"create_mechanical_miners:lapis_vein",
-		"create_mechanical_miners:deepslate_lapis_vein"
+		"create_mechanical_miners:deepslate_lapis_vein",
+
+		"create_mechanical_miners:coal_vein",
+		"create_mechanical_miners:deepslate_coal_vein",
+
+		"create_mechanical_miners:amethyst_vein"
 	]
 }

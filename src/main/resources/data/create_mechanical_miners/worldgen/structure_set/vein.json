@@ -47,6 +47,14 @@
 		{
 			"structure": "create_mechanical_miners:vein/deepslate_lapis_vein",
 			"weight": 2
+		},
+		{
+			"structure": "create_mechanical_miners:vein/coal_vein",
+			"weight": 1
+		},
+		{
+			"structure": "create_mechanical_miners:vein/deepslate_coal_vein",
+			"weight": 2
 		}
 	],
 	"placement": {

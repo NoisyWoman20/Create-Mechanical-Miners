@@ -23,6 +23,11 @@
 	"block.create_mechanical_miners.lapis_vein": "Lapis Vein",
 	"block.create_mechanical_miners.deepslate_lapis_vein": "Deepslate Lapis Vein",
 
+	"block.create_mechanical_miners.coal_vein": "Coal Vein",
+	"block.create_mechanical_miners.deepslate_coal_vein": "Deepslate Coal Vein",
+
+	"block.create_mechanical_miners.amethyst_vein": "Amethyst Vein",
+
 	"item_group.create_mechanical_miners.create_mechanical_miners_tab": "Create: Mechanical Miners",
 
 	"gui.goggles.stress_miner.currently_mining": "Currently mining: ",

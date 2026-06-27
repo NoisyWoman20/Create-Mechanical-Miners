@@ -28,8 +28,12 @@ public class AndesiteStressMinerBlockEntity extends AbstractStressMinerBlockEnti
 	static {
 		MINEABLE_ORES.add(CMMBlocks.IRON_VEIN_BLOCK.get());
 		MINEABLE_ORES.add(CMMBlocks.DEEPSLATE_IRON_VEIN_BLOCK.get());
+
 		MINEABLE_ORES.add(CMMBlocks.COPPER_VEIN_BLOCK.get());
 		MINEABLE_ORES.add(CMMBlocks.DEEPSLATE_COPPER_VEIN_BLOCK.get());
+
+		MINEABLE_ORES.add(CMMBlocks.COAL_VEIN_BLOCK.get());
+		MINEABLE_ORES.add(CMMBlocks.DEEPSLATE_COAL_VEIN_BLOCK.get());
 	}
 
 	@Override

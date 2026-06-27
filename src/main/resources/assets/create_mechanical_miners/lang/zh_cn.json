@@ -23,6 +23,11 @@
 	"block.create_mechanical_miners.lapis_vein": "青金石矿脉",
 	"block.create_mechanical_miners.deepslate_lapis_vein": "深层青金石矿脉",
 
+	"block.create_mechanical_miners.coal_vein": "煤矿脉",
+	"block.create_mechanical_miners.deepslate_coal_vein": "深层煤矿脉",
+
+	"block.create_mechanical_miners.amethyst_vein": "紫水晶矿脉",
+
 	"item_group.create_mechanical_miners.create_mechanical_miners_tab": "机械动力：机械矿机",
 
 	"gui.goggles.stress_miner.currently_mining": "开采中的矿物：",

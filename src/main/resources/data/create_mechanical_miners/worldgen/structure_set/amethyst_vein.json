@@ -1,0 +1,20 @@
+{
+	"structures": [
+		{
+			"structure": "create_mechanical_miners:vein/amethyst_vein",
+			"weight": 1
+		}
+	],
+	"placement": {
+		"salt": 2333,
+		"type": "minecraft:random_spread",
+		"spread_type": "linear",
+		"spacing": 50,
+		"separation": 10,
+		"biomes": "#minecraft:is_mountain",
+		"exclusion_zone": {
+			"other_set": "create_mechanical_miners:vein",
+			"chunk_count": 16
+		}
+	}
+}
