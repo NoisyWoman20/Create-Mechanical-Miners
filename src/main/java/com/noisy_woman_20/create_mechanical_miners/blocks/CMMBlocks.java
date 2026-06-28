@@ -25,8 +25,8 @@ public class CMMBlocks {
 
 	public static final BlockEntry<DiamondVeinBlock> DIAMOND_VEIN_BLOCK = CreateMechanicalMiners.REGISTRATE
 		.block("diamond_vein", DiamondVeinBlock::new)
-		.properties(p -> p.strength(1.5f))
-		.properties(p -> p.explosionResistance(6f))
+		.properties(p -> p.strength(3f))
+		.properties(p -> p.explosionResistance(3f))
 		.properties(p -> p.mapColor(MapColor.STONE))
 		.properties(p -> p.sound(SoundType.STONE))
 		.properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
@@ -34,8 +34,8 @@ public class CMMBlocks {
 
 	public static final BlockEntry<DeepslateDiamondVeinBlock> DEEPSLATE_DIAMOND_VEIN_BLOCK = CreateMechanicalMiners.REGISTRATE
 		.block("deepslate_diamond_vein", DeepslateDiamondVeinBlock::new)
-		.properties(p -> p.strength(3f))
-		.properties(p -> p.explosionResistance(6f))
+		.properties(p -> p.strength(4.5f))
+		.properties(p -> p.explosionResistance(3f))
 		.properties(p -> p.mapColor(MapColor.DEEPSLATE))
 		.properties(p -> p.sound(SoundType.DEEPSLATE))
 		.properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
@@ -43,8 +43,8 @@ public class CMMBlocks {
 
 	public static final BlockEntry<IronVeinBlock> IRON_VEIN_BLOCK = CreateMechanicalMiners.REGISTRATE
 		.block("iron_vein", IronVeinBlock::new)
-		.properties(p -> p.strength(1.5f))
-		.properties(p -> p.explosionResistance(6f))
+		.properties(p -> p.strength(3f))
+		.properties(p -> p.explosionResistance(3f))
 		.properties(p -> p.mapColor(MapColor.STONE))
 		.properties(p -> p.sound(SoundType.STONE))
 		.properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
@@ -52,17 +52,17 @@ public class CMMBlocks {
 
 	public static final BlockEntry<DeepslateIronVeinBlock> DEEPSLATE_IRON_VEIN_BLOCK = CreateMechanicalMiners.REGISTRATE
 		.block("deepslate_iron_vein", DeepslateIronVeinBlock::new)
-		.properties(p -> p.strength(3f))
-		.properties(p -> p.explosionResistance(6f))
-		.properties(p -> p.mapColor(MapColor.STONE))
+		.properties(p -> p.strength(4.5f))
+		.properties(p -> p.explosionResistance(3f))
+		.properties(p -> p.mapColor(MapColor.DEEPSLATE))
 		.properties(p -> p.sound(SoundType.DEEPSLATE))
 		.properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
 		.register();
 
 	public static final BlockEntry<GoldVeinBlock> GOLD_VEIN_BLOCK = CreateMechanicalMiners.REGISTRATE
 		.block("gold_vein", GoldVeinBlock::new)
-		.properties(p -> p.strength(1.5f))
-		.properties(p -> p.explosionResistance(6f))
+		.properties(p -> p.strength(3f))
+		.properties(p -> p.explosionResistance(3f))
 		.properties(p -> p.mapColor(MapColor.STONE))
 		.properties(p -> p.sound(SoundType.STONE))
 		.properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
@@ -70,17 +70,17 @@ public class CMMBlocks {
 
 	public static final BlockEntry<DeepslateGoldVeinBlock> DEEPSLATE_GOLD_VEIN_BLOCK = CreateMechanicalMiners.REGISTRATE
 		.block("deepslate_gold_vein", DeepslateGoldVeinBlock::new)
-		.properties(p -> p.strength(3f))
-		.properties(p -> p.explosionResistance(6f))
-		.properties(p -> p.mapColor(MapColor.STONE))
+		.properties(p -> p.strength(4.5f))
+		.properties(p -> p.explosionResistance(3f))
+		.properties(p -> p.mapColor(MapColor.DEEPSLATE))
 		.properties(p -> p.sound(SoundType.DEEPSLATE))
 		.properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
 		.register();
 
 	public static final BlockEntry<CopperVeinBlock> COPPER_VEIN_BLOCK = CreateMechanicalMiners.REGISTRATE
 		.block("copper_vein", CopperVeinBlock::new)
-		.properties(p -> p.strength(1.5f))
-		.properties(p -> p.explosionResistance(6f))
+		.properties(p -> p.strength(3f))
+		.properties(p -> p.explosionResistance(3f))
 		.properties(p -> p.mapColor(MapColor.STONE))
 		.properties(p -> p.sound(SoundType.STONE))
 		.properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
@@ -88,9 +88,9 @@ public class CMMBlocks {
 
 	public static final BlockEntry<DeepslateCopperVeinBlock> DEEPSLATE_COPPER_VEIN_BLOCK = CreateMechanicalMiners.REGISTRATE
 		.block("deepslate_copper_vein", DeepslateCopperVeinBlock::new)
-		.properties(p -> p.strength(3f))
-		.properties(p -> p.explosionResistance(6f))
-		.properties(p -> p.mapColor(MapColor.STONE))
+		.properties(p -> p.strength(4.5f))
+		.properties(p -> p.explosionResistance(3f))
+		.properties(p -> p.mapColor(MapColor.DEEPSLATE))
 		.properties(p -> p.sound(SoundType.DEEPSLATE))
 		.properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
 		.register();
