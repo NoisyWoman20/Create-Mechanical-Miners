@@ -13,8 +13,7 @@
 
 ## 授权信息 / License
 
-本模组的源代码和美术资源采用 **All Rights Reserved** 许可证。
-
+本模组的源代码和美术资源采用 **All Rights Reserved** 许可。
 > The source code and art assets of this mod are licensed under **All Rights Reserved**.
 
 ---

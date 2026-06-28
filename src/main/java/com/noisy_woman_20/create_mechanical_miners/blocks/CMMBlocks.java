@@ -18,7 +18,7 @@ public class CMMBlocks {
 	public static final BlockEntry<DeepslateDiamondVeinBlock> DEEPSLATE_DIAMOND_VEIN_BLOCK = CreateMechanicalMiners.REGISTRATE
 		.block("deepslate_diamond_vein", DeepslateDiamondVeinBlock::new)
 		.properties(p -> p.strength(3f))
-		.properties(p -> p.explosionResistance(6f))
+		.properties(p -> p.explosionResistance(3f))
 		.properties(p -> p.mapColor(MapColor.DEEPSLATE))
 		.properties(p -> p.sound(SoundType.DEEPSLATE))
 		.properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
@@ -27,7 +27,7 @@ public class CMMBlocks {
 	public static final BlockEntry<DiamondVeinBlock> DIAMOND_VEIN_BLOCK = CreateMechanicalMiners.REGISTRATE
 		.block("diamond_vein", DiamondVeinBlock::new)
 		.properties(p -> p.strength(1.5f))
-		.properties(p -> p.explosionResistance(6f))
+		.properties(p -> p.explosionResistance(3f))
 		.properties(p -> p.mapColor(MapColor.STONE))
 		.properties(p -> p.sound(SoundType.STONE))
 		.properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
