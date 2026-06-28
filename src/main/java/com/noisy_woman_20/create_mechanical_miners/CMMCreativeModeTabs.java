@@ -47,6 +47,8 @@ public class CMMCreativeModeTabs {
 				output.accept(CMMItems.DIAMOND_VEIN_ITEM.get());
 				output.accept(CMMItems.DEEPSLATE_DIAMOND_VEIN_ITEM.get());
 
+				output.accept(CMMItems.NETHER_QUARTZ_VEIN_ITEM.get());
+
 				output.accept(CMMItems.AMETHYST_VEIN_ITEM.get());
 
 				output.accept(CMMItems.ZINC_VEIN_ITEM.get());

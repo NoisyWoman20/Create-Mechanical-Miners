@@ -50,6 +50,8 @@ public class BrassStressMinerBlockEntity extends AbstractStressMinerBlockEntity 
 		MINEABLE_ORES.add(CMMBlocks.COAL_VEIN_BLOCK.get());
 		MINEABLE_ORES.add(CMMBlocks.DEEPSLATE_COAL_VEIN_BLOCK.get());
 
+		MINEABLE_ORES.add(CMMBlocks.NETHER_QUARTZ_VEIN_BLOCK.get());
+
 		MINEABLE_ORES.add(CMMBlocks.AMETHYST_VEIN_BLOCK.get());
 
 		MINEABLE_ORES.add(CMMBlocks.ZINC_VEIN_BLOCK.get());

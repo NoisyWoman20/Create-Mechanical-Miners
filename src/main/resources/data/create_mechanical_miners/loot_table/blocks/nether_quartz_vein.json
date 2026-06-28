@@ -7,7 +7,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "minecraft:lapis_lazuli",
+					"name": "minecraft:nether_quartz",
 					"functions": [
 						{
 							"function": "minecraft:set_count",
@@ -33,5 +33,5 @@
 			]
 		}
 	],
-	"random_sequence": "create_mechanical_miners:blocks/lapis_vein"
+	"random_sequence": "create_mechanical_miners:blocks/nether_quartz_vein"
 }

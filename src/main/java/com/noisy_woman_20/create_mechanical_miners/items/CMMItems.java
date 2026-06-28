@@ -76,6 +76,10 @@ public class CMMItems {
 		.item("deepslate_coal_vein", DeepslateCoalVeinItem::new)
 		.register();
 
+	public static final ItemEntry<NetherQuartzVeinItem> NETHER_QUARTZ_VEIN_ITEM = CreateMechanicalMiners.REGISTRATE
+		.item("nether_quartz_vein", NetherQuartzVeinItem::new)
+		.register();
+
 	public static final ItemEntry<AmethystVeinItem> AMETHYST_VEIN_ITEM = CreateMechanicalMiners.REGISTRATE
 		.item("amethyst_vein", AmethystVeinItem::new)
 		.register();

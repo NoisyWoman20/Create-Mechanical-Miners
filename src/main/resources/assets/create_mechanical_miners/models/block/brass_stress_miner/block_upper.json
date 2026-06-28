@@ -1,6 +1,4 @@
 {
-	"format_version": "1.21.11",
-	"credit": "Made with Blockbench",
 	"parent": "create:block/block",
 	"textures": {
 		"0": "create_mechanical_miners:block/miner/stress_miner/brass_stress_miner/brass_casing_connected",

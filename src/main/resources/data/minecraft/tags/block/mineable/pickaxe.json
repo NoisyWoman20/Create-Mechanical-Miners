@@ -28,6 +28,8 @@
 		"create_mechanical_miners:coal_vein",
 		"create_mechanical_miners:deepslate_coal_vein",
 
+		"create_mechanical_miners:nether_quartz_vein",
+
 		"create_mechanical_miners:amethyst_vein",
 
 		"create_mechanical_miners:zinc_vein",

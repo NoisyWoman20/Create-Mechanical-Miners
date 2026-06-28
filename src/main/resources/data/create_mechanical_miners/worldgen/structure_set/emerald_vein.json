@@ -17,7 +17,7 @@
 		"separation": 10,
 		"biomes": "#minecraft:is_mountain",
 		"exclusion_zone": {
-			"other_set": "create_mechanical_miners:vein",
+			"other_set": "create_mechanical_miners:overworld_vein",
 			"chunk_count": 16
 		}
 	}
